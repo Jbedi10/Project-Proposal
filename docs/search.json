@@ -6,27 +6,28 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-07-28T22:33:08+00:00"
+      "last_modified": "2022-07-28T23:11:54+00:00"
     },
     {
-      "path": "cost_analysis.html",
+      "path": "costanalysis.html",
+      "title": "Check out this sick analysis",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2022-07-28T22:33:09+00:00"
+      "contents": "\n\n\n\n\n\n\n\n\nSuper Bowl Ad Final Project\n\n\nHome\nAbout\nCost Analysis\n☰\n\n\n  \n    \n      \n        \n        \n        \n      \n      \n    \n    \n      \n  Home\n\n\n  About\n\n\n  Cost Analysis\n\n      \n  \n\n\n\n\n\n\nCheck out this sick analysis\n\n\n\n\n\nR Markdown\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.\nWhen you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:\nsummary(cars)\n##      speed           dist       \n##  Min.   : 4.0   Min.   :  2.00  \n##  1st Qu.:12.0   1st Qu.: 26.00  \n##  Median :15.0   Median : 36.00  \n##  Mean   :15.4   Mean   : 42.98  \n##  3rd Qu.:19.0   3rd Qu.: 56.00  \n##  Max.   :25.0   Max.   :120.00\n\n\nIncluding Plots\nYou can also embed plots, for example:\n\nNote that the echo = FALSE parameter was added to the code chunk to prevent printing of the R code that generated the plot.\n\n\n\n\n\n\n\n\n\n\n\n",
+      "last_modified": "2022-07-28T23:11:54+00:00"
     },
     {
       "path": "index.html",
-      "title": "Super Bowl Ad Final Project",
-      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "title": "Circle back",
+      "description": "In our final project, we will investigate superbowl ads from 2000 to 2020 using a data set from Five Thirty Eight. We will make a website or application that displays trends of brands’ advertisement strategies over time and use predictive modeling/ simulations to anticipate which direction superbowl ads will go in the future.\n",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-07-28T22:33:09+00:00"
+      "last_modified": "2022-07-28T23:11:54+00:00"
     },
     {
       "path": "Proposal.html",
       "author": [],
       "contents": "\nR Project Proposal\nValerie McIlvaine and Jake Bedi ## Introduction\nIn our final project, we will investigate superbowl ads from 2000 to 2020 using a data set from Five Thirty Eight. We will make a website or application that displays trends of brands’ advertisement strategies over time and use predictive modeling/ simulations to anticipate which direction superbowl ads will go in the future.\n\n\n",
-      "last_modified": "2022-07-28T22:33:09+00:00"
+      "last_modified": "2022-07-28T23:11:54+00:00"
     }
   ],
   "collections": []

@@ -1,5 +1,5 @@
 ---
-title: "costanalysis"
+title: "Check out this sick analysis"
 output: html_document
 ---
 
@@ -22,7 +22,12 @@ summary(cars)
 You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
-plot(pressure)
+ggplot(data=total11, aes(x=year, y=cost_per_second_in_thousands)) +
+  geom_line(linetype = "dashed", color="blue", size=1)+
+    theme(legend.position="bottom")+
+  geom_point(color="blue")+
+  ggtitle("Cost Per Second of Super Bowl Ads from 2000 to 2020")+
+    ylab("Cost (Hundreds of Thousands of Dollars)")
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
