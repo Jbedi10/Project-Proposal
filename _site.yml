@@ -11,4 +11,8 @@ navbar:
       href: about.html
     - text: "Cost Analysis"
       href: costanalysis.html
+    - text: "Simulation"
+      href: simulation.html
+    - text: "Ad Themes"
+      href: themes.html
 output: distill::distill_article
