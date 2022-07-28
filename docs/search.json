@@ -6,13 +6,13 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-07-28T22:30:24+00:00"
+      "last_modified": "2022-07-28T22:31:24+00:00"
     },
     {
       "path": "cost_analysis.html",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-07-28T22:30:24+00:00"
+      "last_modified": "2022-07-28T22:31:24+00:00"
     },
     {
       "path": "index.html",
@@ -20,13 +20,13 @@
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-07-28T22:30:25+00:00"
+      "last_modified": "2022-07-28T22:31:24+00:00"
     },
     {
       "path": "Proposal.html",
       "author": [],
       "contents": "\nR Project Proposal\nValerie McIlvaine and Jake Bedi ## Introduction\nIn our final project, we will investigate superbowl ads from 2000 to 2020 using a data set from Five Thirty Eight. We will make a website or application that displays trends of brands’ advertisement strategies over time and use predictive modeling/ simulations to anticipate which direction superbowl ads will go in the future.\n\n\n",
-      "last_modified": "2022-07-28T22:30:25+00:00"
+      "last_modified": "2022-07-28T22:31:24+00:00"
     }
   ],
   "collections": []
