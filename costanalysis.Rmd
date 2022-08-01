@@ -9,14 +9,12 @@ library(tidyverse)
 library(readr)
 ```
 
-```{r upload files, echo=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r upload files, echo=FALSE, message=FALSE}
 data_ad_time <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/Ad  Time _ Category - Sheet1.csv")
 data <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/combined  - Sheet1.csv")
 data_ad_cost <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/Cost per Super bowl ad 2000-2020 - Sheet1 (1).csv")
 ```
-```{r joining two data sets, echo=FALSE }
-knitr::opts_chunk$set(echo = FALSE)
+```{r joining two data sets, echo=FALSE, message=FALSE }
 # merge data and data_ad_cost together 
 total <- inner_join(data, data_ad_cost, by="year")
 total
@@ -35,26 +33,24 @@ total%>% as.data.frame %>%
   mutate(cost_of_ad_in_millions =cost_of_ad/1000000 )%>%
   mutate(cost_per_second_in_thousands =cost_per_second/100000)
   
-total11
  # mutate(currency = scales::dollar(cost_per_second))
-  
+
+
  
   
 ```
 ```{r }
 #total1<- bind_cols(data_ad, data_ad_time %>% select(-year, -brand))
 ```
+## Check out this stuff
 
-
-```{r exploratory bar charts, echo=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r exploratory bar charts, echo=FALSE, message=FALSE}
 # count of brands use of gender
 ggplot(data=total, aes(x=category)) +
   geom_bar(stat= "count", position="dodge",color= "black", aes(fill=celebrity))+ 
    ggtitle("Bar char of Super Bowl Ad Categories and Celebrity Apperances From 2000-2020")
 ```
-```{r line graph, echo=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r line graph, echo=FALSE, message=FALSE}
   ggplot(data=total11, aes(cost_per_second)) +
   geom_histogram(binwidth = 10)
   
@@ -82,8 +78,7 @@ total11 %>%
   geom_bar( stat="count", position="dodge",colour="black", aes(fill=diversity)) 
   
 ```
-```{r porportions, echo=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r porportions, echo=FALSE, message=FALSE}
  ggplot(data=total11, aes(x= year, fill=use_sex))+
    geom_bar(stat= "count", position="fill")+
    ggtitle("Porportion of SuperBowl Ads that use Sex Appeal from 2000 to 2020")
