@@ -912,24 +912,1055 @@ $(document).ready(function () {
 </div>
 
 
-<div id="r-markdown" class="section level2">
-<h2>R Markdown</h2>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)</code></pre>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-</div>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
-</div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   year = col_double(),
+##   brand = col_character(),
+##   ad_time = col_double(),
+##   category = col_character(),
+##   gender = col_character(),
+##   diversity = col_logical()
+## )</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   year = col_double(),
+##   brand = col_character(),
+##   funny = col_logical(),
+##   show_product_quickly = col_logical(),
+##   patriotic = col_logical(),
+##   celebrity = col_logical(),
+##   danger = col_logical(),
+##   animals = col_logical(),
+##   use_sex = col_logical(),
+##   ad_time = col_double(),
+##   category = col_character(),
+##   gender = col_character(),
+##   diversity = col_logical()
+## )</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   year = col_double(),
+##   cost_per_thirty_seconds = col_character(),
+##   cost_per_minute = col_character()
+## )</code></pre>
+<pre><code>## # A tibble: 243 x 15
+##     year brand funny show_product_qu… patriotic celebrity danger animals use_sex
+##    &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt; &lt;lgl&gt;            &lt;lgl&gt;     &lt;lgl&gt;     &lt;lgl&gt;  &lt;lgl&gt;   &lt;lgl&gt;  
+##  1  2018 Toyo… FALSE FALSE            FALSE     FALSE     FALSE  FALSE   FALSE  
+##  2  2006 Bud … TRUE  FALSE            FALSE     FALSE     TRUE   TRUE    FALSE  
+##  3  2018 Hynu… FALSE TRUE             FALSE     FALSE     FALSE  FALSE   FALSE  
+##  4  2003 Bud … TRUE  TRUE             FALSE     FALSE     TRUE   TRUE    TRUE   
+##  5  2020 Toyo… TRUE  TRUE             FALSE     TRUE      TRUE   TRUE    FALSE  
+##  6  2020 Coca… TRUE  FALSE            FALSE     TRUE      FALSE  TRUE    FALSE  
+##  7  2020 Kia   FALSE FALSE            FALSE     TRUE      FALSE  FALSE   FALSE  
+##  8  2020 Hynu… TRUE  TRUE             FALSE     TRUE      FALSE  TRUE    FALSE  
+##  9  2020 Budw… FALSE TRUE             TRUE      TRUE      TRUE   FALSE   FALSE  
+## 10  2010 Hynu… FALSE TRUE             TRUE      FALSE     FALSE  FALSE   FALSE  
+## # … with 233 more rows, and 6 more variables: ad_time &lt;dbl&gt;, category &lt;chr&gt;,
+## #   gender &lt;chr&gt;, diversity &lt;lgl&gt;, cost_per_thirty_seconds &lt;chr&gt;,
+## #   cost_per_minute &lt;chr&gt;</code></pre>
+<pre><code>## [1] 243  15</code></pre>
+<pre><code>##     year     brand funny show_product_quickly patriotic celebrity danger
+## 1   2018    Toyota FALSE                FALSE     FALSE     FALSE  FALSE
+## 2   2006 Bud Light  TRUE                FALSE     FALSE     FALSE   TRUE
+## 3   2018   Hynudai FALSE                 TRUE     FALSE     FALSE  FALSE
+## 4   2003 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 5   2020    Toyota  TRUE                 TRUE     FALSE      TRUE   TRUE
+## 6   2020 Coca-Cola  TRUE                FALSE     FALSE      TRUE  FALSE
+## 7   2020       Kia FALSE                FALSE     FALSE      TRUE  FALSE
+## 8   2020   Hynudai  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 9   2020 Budweiser FALSE                 TRUE      TRUE      TRUE   TRUE
+## 10  2010   Hynudai FALSE                 TRUE      TRUE     FALSE  FALSE
+## 11  2010 Bud Light  TRUE                FALSE     FALSE     FALSE   TRUE
+## 12  2007 Budweiser  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 13  2002 Budweiser FALSE                 TRUE      TRUE     FALSE  FALSE
+## 14  2020       NFL FALSE                FALSE      TRUE      TRUE  FALSE
+## 15  2017       NFL FALSE                 TRUE     FALSE     FALSE  FALSE
+## 16  2005 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 17  2009     Pepsi  TRUE                FALSE     FALSE     FALSE   TRUE
+## 18  2004 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 19  2020   Doritos  TRUE                 TRUE     FALSE      TRUE   TRUE
+## 20  2007 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 21  2020     Pepsi FALSE                 TRUE     FALSE      TRUE  FALSE
+## 22  2019   Hynudai  TRUE                FALSE      TRUE      TRUE  FALSE
+## 23  2009 Budweiser FALSE                 TRUE      TRUE     FALSE  FALSE
+## 24  2011       Kia  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 25  2019   Doritos FALSE                 TRUE     FALSE      TRUE  FALSE
+## 26  2019     Pepsi  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 27  2013   Hynudai  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 28  2019       NFL  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 29  2011 Coca-Cola FALSE                FALSE     FALSE     FALSE  FALSE
+## 30  2019     Pepsi  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 31  2016   Hynudai  TRUE                FALSE     FALSE     FALSE   TRUE
+## 32  2010 Bud Light  TRUE                FALSE     FALSE     FALSE  FALSE
+## 33  2000   E-Trade  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 34  2001 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 35  2018   Doritos  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 36  2001 Budweiser  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 37  2018 Coca-Cola FALSE                 TRUE     FALSE      TRUE  FALSE
+## 38  2013   Hynudai FALSE                FALSE     FALSE     FALSE  FALSE
+## 39  2004     Pepsi  TRUE                FALSE     FALSE     FALSE  FALSE
+## 40  2018       Kia FALSE                FALSE     FALSE      TRUE  FALSE
+## 41  2018     Pepsi FALSE                 TRUE      TRUE      TRUE  FALSE
+## 42  2018       NFL  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 43  2010   E-Trade  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 44  2017       NFL FALSE                 TRUE      TRUE      TRUE  FALSE
+## 45  2000   E-Trade  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 46  2007   E-Trade  TRUE                FALSE      TRUE     FALSE  FALSE
+## 47  2000 Budweiser  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 48  2013   Doritos  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 49  2013 Budweiser FALSE                 TRUE     FALSE     FALSE  FALSE
+## 50  2007   Doritos  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 51  2009 Budweiser  TRUE                 TRUE      TRUE     FALSE  FALSE
+## 52  2012   E-Trade  TRUE                FALSE     FALSE     FALSE  FALSE
+## 53  2019 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 54  2017       Kia  TRUE                FALSE     FALSE      TRUE   TRUE
+## 55  2007 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 56  2011 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 57  2016     Pepsi FALSE                FALSE     FALSE      TRUE  FALSE
+## 58  2009   Hynudai  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 59  2011 Coca-Cola  TRUE                FALSE     FALSE     FALSE   TRUE
+## 60  2016   Hynudai  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 61  2009   Doritos  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 62  2010   Doritos  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 63  2015   Doritos  TRUE                FALSE     FALSE     FALSE  FALSE
+## 64  2007 Coca-Cola FALSE                 TRUE      TRUE     FALSE   TRUE
+## 65  2019    Toyota FALSE                 TRUE     FALSE     FALSE  FALSE
+## 66  2002 Budweiser  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 67  2014 Coca-Cola  TRUE                FALSE     FALSE     FALSE  FALSE
+## 68  2004 Budweiser  TRUE                FALSE     FALSE     FALSE  FALSE
+## 69  2016 Coca-Cola  TRUE                 TRUE     FALSE      TRUE   TRUE
+## 70  2015 Budweiser  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 71  2016   Hynudai  TRUE                FALSE     FALSE      TRUE  FALSE
+## 72  2001 Bud Light  TRUE                FALSE     FALSE     FALSE   TRUE
+## 73  2003 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 74  2000 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 75  2018 Coca-Cola FALSE                 TRUE      TRUE     FALSE  FALSE
+## 76  2001     Pepsi  TRUE                FALSE     FALSE     FALSE  FALSE
+## 77  2014   Doritos  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 78  2016 Budweiser FALSE                 TRUE     FALSE      TRUE  FALSE
+## 79  2004 Budweiser FALSE                 TRUE      TRUE     FALSE  FALSE
+## 80  2015 Budweiser FALSE                 TRUE      TRUE     FALSE  FALSE
+## 81  2016       Kia  TRUE                FALSE     FALSE      TRUE  FALSE
+## 82  2017 Budweiser FALSE                FALSE      TRUE     FALSE   TRUE
+## 83  2000 Budweiser  TRUE                FALSE     FALSE     FALSE  FALSE
+## 84  2009 Coca-Cola FALSE                 TRUE     FALSE     FALSE  FALSE
+## 85  2015   Doritos  TRUE                 TRUE      TRUE     FALSE  FALSE
+## 86  2004    Toyota  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 87  2016       NFL FALSE                FALSE      TRUE      TRUE  FALSE
+## 88  2017   Hynudai FALSE                FALSE      TRUE     FALSE  FALSE
+## 89  2012 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 90  2008 Budweiser FALSE                 TRUE      TRUE     FALSE  FALSE
+## 91  2013   Hynudai  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 92  2010   Doritos  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 93  2016 Bud Light  TRUE                 TRUE      TRUE      TRUE  FALSE
+## 94  2019    Toyota FALSE                 TRUE     FALSE     FALSE  FALSE
+## 95  2009 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 96  2019 Budweiser FALSE                FALSE     FALSE     FALSE  FALSE
+## 97  2003 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 98  2019 Coca-Cola FALSE                 TRUE      TRUE     FALSE  FALSE
+## 99  2012   Hynudai  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 100 2011   Hynudai  TRUE                FALSE     FALSE     FALSE  FALSE
+## 101 2015       Kia  TRUE                 TRUE     FALSE      TRUE   TRUE
+## 102 2014 Budweiser FALSE                FALSE      TRUE     FALSE  FALSE
+## 103 2007 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 104 2008   Hynudai FALSE                 TRUE     FALSE     FALSE  FALSE
+## 105 2010       NFL FALSE                FALSE      TRUE     FALSE  FALSE
+## 106 2005     Pepsi  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 107 2018 Budweiser FALSE                FALSE      TRUE     FALSE  FALSE
+## 108 2018 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 109 2004 Bud Light  TRUE                FALSE     FALSE     FALSE   TRUE
+## 110 2002 Budweiser  TRUE                FALSE     FALSE     FALSE  FALSE
+## 111 2006 Budweiser  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 112 2014 Bud Light FALSE                 TRUE     FALSE      TRUE  FALSE
+## 113 2009 Coca-Cola  TRUE                FALSE     FALSE     FALSE  FALSE
+## 114 2014 Bud Light  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 115 2003 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 116 2014    Toyota  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 117 2009 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 118 2014       Kia FALSE                FALSE     FALSE      TRUE   TRUE
+## 119 2014   Hynudai  TRUE                 TRUE     FALSE      TRUE   TRUE
+## 120 2013 Bud Light  TRUE                 TRUE      TRUE      TRUE   TRUE
+## 121 2008 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 122 2003 Budweiser  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 123 2013 Bud Light  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 124 2011   Doritos  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 125 2005 Bud Light  TRUE                FALSE     FALSE     FALSE  FALSE
+## 126 2005 Budweiser  TRUE                FALSE     FALSE     FALSE  FALSE
+## 127 2014   Doritos  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 128 2008 Bud Light  TRUE                FALSE     FALSE     FALSE  FALSE
+## 129 2012     Pepsi FALSE                 TRUE     FALSE      TRUE  FALSE
+## 130 2012   Doritos  TRUE                FALSE     FALSE     FALSE   TRUE
+## 131 2012    Toyota  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 132 2016   Doritos  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 133 2002 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 134 2002 Bud Light  TRUE                FALSE     FALSE     FALSE   TRUE
+## 135 2013   E-Trade  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 136 2008 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 137 2012 Coca-Cola FALSE                 TRUE     FALSE     FALSE  FALSE
+## 138 2004     Pepsi  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 139 2010   Doritos  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 140 2012       Kia  TRUE                FALSE     FALSE      TRUE  FALSE
+## 141 2012       NFL FALSE                 TRUE     FALSE      TRUE  FALSE
+## 142 2005 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 143 2010   Hynudai FALSE                FALSE     FALSE      TRUE  FALSE
+## 144 2004 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 145 2008 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 146 2016    Toyota  TRUE                FALSE     FALSE     FALSE   TRUE
+## 147 2006 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 148 2007 Coca-Cola FALSE                 TRUE     FALSE     FALSE  FALSE
+## 149 2007 Budweiser FALSE                FALSE     FALSE     FALSE   TRUE
+## 150 2013   Doritos  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 151 2010 Bud Light  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 152 2009   Doritos  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 153 2009 Coca-Cola  TRUE                 TRUE     FALSE      TRUE   TRUE
+## 154 2009     Pepsi FALSE                FALSE      TRUE      TRUE   TRUE
+## 155 2001   E-Trade FALSE                FALSE     FALSE     FALSE   TRUE
+## 156 2018 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 157 2015   Doritos  TRUE                FALSE     FALSE     FALSE   TRUE
+## 158 2010       Kia  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 159 2008   Doritos  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 160 2012 Coca-Cola FALSE                 TRUE     FALSE     FALSE  FALSE
+## 161 2011   Hynudai FALSE                FALSE     FALSE     FALSE  FALSE
+## 162 2008 Coca-Cola  TRUE                 TRUE      TRUE      TRUE  FALSE
+## 163 2000 Bud Light  TRUE                FALSE     FALSE     FALSE   TRUE
+## 164 2019       Kia FALSE                FALSE      TRUE     FALSE  FALSE
+## 165 2002 Bud Light  TRUE                FALSE     FALSE     FALSE   TRUE
+## 166 2013       Kia  TRUE                FALSE     FALSE     FALSE  FALSE
+## 167 2008     Pepsi  TRUE                FALSE     FALSE      TRUE   TRUE
+## 168 2019 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 169 2011   Hynudai FALSE                FALSE     FALSE     FALSE  FALSE
+## 170 2008 Bud Light  TRUE                 TRUE      TRUE      TRUE  FALSE
+## 171 2008 Bud Light  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 172 2010   E-Trade  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 173 2013 Budweiser FALSE                 TRUE     FALSE     FALSE  FALSE
+## 174 2001     Pepsi  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 175 2018 Coca-Cola FALSE                 TRUE     FALSE     FALSE  FALSE
+## 176 2003 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 177 2011     Pepsi  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 178 2018   E-Trade  TRUE                FALSE      TRUE     FALSE  FALSE
+## 179 2016 Budweiser FALSE                 TRUE      TRUE     FALSE  FALSE
+## 180 2008 Coca-Cola  TRUE                 TRUE     FALSE      TRUE   TRUE
+## 181 2013       Kia  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 182 2014 Coca-Cola FALSE                 TRUE      TRUE     FALSE  FALSE
+## 183 2012 Budweiser FALSE                 TRUE      TRUE     FALSE  FALSE
+## 184 2004 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 185 2007 Bud Light  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 186 2007 Budweiser FALSE                FALSE     FALSE      TRUE  FALSE
+## 187 2019       Kia FALSE                FALSE      TRUE     FALSE  FALSE
+## 188 2002 Budweiser  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 189 2010   E-Trade  TRUE                FALSE     FALSE     FALSE  FALSE
+## 190 2003 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 191 2018    Toyota  TRUE                 TRUE      TRUE     FALSE  FALSE
+## 192 2003 Budweiser  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 193 2013 Budweiser FALSE                 TRUE     FALSE     FALSE  FALSE
+## 194 2010 Budweiser  TRUE                 TRUE      TRUE     FALSE  FALSE
+## 195 2003 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 196 2002   E-Trade  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 197 2006 Budweiser  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 198 2012 Coca-Cola FALSE                 TRUE     FALSE     FALSE   TRUE
+## 199 2019 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 200 2007    Toyota FALSE                 TRUE     FALSE     FALSE  FALSE
+## 201 2014   Hynudai  TRUE                FALSE     FALSE     FALSE   TRUE
+## 202 2006     Pepsi  TRUE                 TRUE     FALSE      TRUE   TRUE
+## 203 2006     Pepsi  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 204 2015     Pepsi FALSE                 TRUE     FALSE     FALSE  FALSE
+## 205 2012 Bud Light FALSE                 TRUE     FALSE     FALSE  FALSE
+## 206 2009   Doritos  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 207 2006 Budweiser  TRUE                FALSE     FALSE     FALSE  FALSE
+## 208 2014 Bud Light FALSE                 TRUE     FALSE     FALSE  FALSE
+## 209 2005     Pepsi  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 210 2005 Bud Light  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 211 2007 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 212 2005     Pepsi  TRUE                FALSE     FALSE      TRUE  FALSE
+## 213 2015 Budweiser FALSE                 TRUE      TRUE     FALSE   TRUE
+## 214 2019 Bud Light  TRUE                 TRUE     FALSE     FALSE   TRUE
+## 215 2004 Bud Light  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 216 2003 Budweiser  TRUE                FALSE     FALSE     FALSE  FALSE
+## 217 2009   E-Trade  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 218 2013     Pepsi  TRUE                FALSE     FALSE     FALSE  FALSE
+## 219 2004 Budweiser  TRUE                FALSE     FALSE      TRUE  FALSE
+## 220 2009   Hynudai FALSE                 TRUE     FALSE     FALSE  FALSE
+## 221 2014 Budweiser FALSE                FALSE      TRUE     FALSE  FALSE
+## 222 2003     Pepsi  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 223 2015 Coca-Cola FALSE                FALSE     FALSE     FALSE  FALSE
+## 224 2003       NFL FALSE                FALSE     FALSE      TRUE  FALSE
+## 225 2012   Doritos  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 226 2002     Pepsi FALSE                 TRUE     FALSE      TRUE  FALSE
+## 227 2002 Bud Light  TRUE                 TRUE     FALSE      TRUE   TRUE
+## 228 2000 Budweiser  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 229 2001 Bud Light  TRUE                FALSE     FALSE      TRUE  FALSE
+## 230 2013   Hynudai FALSE                 TRUE     FALSE     FALSE  FALSE
+## 231 2015    Toyota FALSE                 TRUE      TRUE     FALSE  FALSE
+## 232 2000 Budweiser  TRUE                FALSE     FALSE     FALSE   TRUE
+## 233 2001   Doritos  TRUE                 TRUE     FALSE      TRUE  FALSE
+## 234 2016   Doritos  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 235 2008 Bud Light  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 236 2007   Doritos  TRUE                 TRUE     FALSE     FALSE  FALSE
+## 237 2001       NFL FALSE                FALSE     FALSE      TRUE  FALSE
+## 238 2001     Pepsi  TRUE                FALSE      TRUE      TRUE  FALSE
+## 239 2014       NFL FALSE                 TRUE     FALSE     FALSE  FALSE
+## 240 2012 Budweiser FALSE                 TRUE      TRUE     FALSE  FALSE
+## 241 2001     Pepsi  TRUE                FALSE     FALSE      TRUE   TRUE
+## 242 2001   E-Trade  TRUE                FALSE     FALSE     FALSE   TRUE
+## 243 2001 Budweiser FALSE                FALSE     FALSE      TRUE  FALSE
+##     animals use_sex ad_time category gender diversity cost_per_thirty_seconds
+## 1     FALSE   FALSE      60      car   both      TRUE                 5200000
+## 2      TRUE   FALSE      30     beer   male     FALSE                 2500000
+## 3     FALSE   FALSE      60      car   both     FALSE                 5200000
+## 4      TRUE    TRUE      30     beer   both     FALSE                 2200000
+## 5      TRUE   FALSE      60      car   both      TRUE                 5600000
+## 6      TRUE   FALSE      60      pop   both     FALSE                 5600000
+## 7     FALSE   FALSE      60      car   male      TRUE                 5600000
+## 8      TRUE   FALSE      60      car   both     FALSE                 5600000
+## 9     FALSE   FALSE      60     beer   both      TRUE                 5600000
+## 10    FALSE   FALSE      30      car   male      TRUE                 2954010
+## 11    FALSE    TRUE      30     beer   both      TRUE                 2954010
+## 12     TRUE    TRUE      30     beer female     FALSE                 2385365
+## 13     TRUE   FALSE      60     beer   male     FALSE                 2200000
+## 14    FALSE   FALSE     120      NFL   male      TRUE                 5600000
+## 15    FALSE   FALSE      30      NFL   male      TRUE                 5000000
+## 16     TRUE    TRUE      30     beer   both     FALSE                 2400000
+## 17    FALSE   FALSE      30      pop   male      TRUE                 2999960
+## 18     TRUE    TRUE      30     beer   both     FALSE                 2302200
+## 19     TRUE   FALSE      60    snack   male      TRUE                 5600000
+## 20    FALSE   FALSE      30     beer   both      TRUE                 2385365
+## 21    FALSE   FALSE      30      pop female      TRUE                 5600000
+## 22    FALSE   FALSE      75      car   both     FALSE                 5300000
+## 23     TRUE   FALSE      60     beer   male     FALSE                 2999960
+## 24    FALSE    TRUE      60      car   both     FALSE                 3100000
+## 25    FALSE   FALSE      60      car   male      TRUE                 5300000
+## 26    FALSE    TRUE      30      pop   both      TRUE                 5300000
+## 27     TRUE   FALSE      30      car   male     FALSE                 3800000
+## 28    FALSE   FALSE     120      NFL   male      TRUE                 5300000
+## 29    FALSE   FALSE      60      pop   male     FALSE                 3100000
+## 30    FALSE   FALSE      30      pop   both      TRUE                 5300000
+## 31     TRUE   FALSE      30      car   both     FALSE                 4500000
+## 32    FALSE   FALSE      45     beer   both      TRUE                 2954010
+## 33     TRUE   FALSE      30  finance   male     FALSE                 2100000
+## 34     TRUE   FALSE      30     beer   both     FALSE                 2200000
+## 35    FALSE   FALSE      30    snack   male     FALSE                 5200000
+## 36    FALSE   FALSE      30     beer   male      TRUE                 2200000
+## 37    FALSE   FALSE      30      pop female     FALSE                 5200000
+## 38     TRUE   FALSE     100      car   male     FALSE                 3800000
+## 39     TRUE   FALSE      45      pop   male     FALSE                 2302200
+## 40    FALSE   FALSE      75      car   male     FALSE                 5200000
+## 41    FALSE   FALSE      30      pop   both      TRUE                 5200000
+## 42    FALSE   FALSE      30      NFL   male      TRUE                 5200000
+## 43    FALSE   FALSE      15  finance   male     FALSE                 2954010
+## 44    FALSE   FALSE      60      NFL   male      TRUE                 5000000
+## 45    FALSE   FALSE      30  finance   both      TRUE                 2100000
+## 46    FALSE   FALSE      30  finance   male     FALSE                 2385365
+## 47    FALSE   FALSE      30     beer   both      TRUE                 2100000
+## 48     TRUE   FALSE      30    snack   male     FALSE                 3800000
+## 49    FALSE    TRUE      30     beer   both     FALSE                 3800000
+## 50    FALSE    TRUE      30    snack   both     FALSE                 2385365
+## 51     TRUE   FALSE      30     beer   male     FALSE                 2999960
+## 52    FALSE   FALSE      30  finance   male     FALSE                 3500000
+## 53    FALSE   FALSE      15     beer   male     FALSE                 5300000
+## 54     TRUE   FALSE      60      car female     FALSE                 5000000
+## 55    FALSE   FALSE      30     beer   both     FALSE                 2385365
+## 56     TRUE   FALSE      30     beer   both      TRUE                 3100000
+## 57    FALSE   FALSE      30      pop   both      TRUE                 4500000
+## 58    FALSE   FALSE      30      car   male      TRUE                 2999960
+## 59     TRUE   FALSE      60      pop   male     FALSE                 3100000
+## 60     TRUE    TRUE      30      car   both     FALSE                 4500000
+## 61    FALSE   FALSE      30    snack   both     FALSE                 2999960
+## 62    FALSE   FALSE      30    snack   male     FALSE                 2954010
+## 63    FALSE    TRUE      30    snack   both     FALSE                 4250000
+## 64     TRUE   FALSE      60      pop   both      TRUE                 2385365
+## 65    FALSE   FALSE      60      car   male     FALSE                 5300000
+## 66    FALSE   FALSE      30     beer   male     FALSE                 2200000
+## 67    FALSE   FALSE      60      pop   male      TRUE                 4000000
+## 68    FALSE   FALSE      30     beer   both      TRUE                 2302200
+## 69    FALSE   FALSE      60      pop   male     FALSE                 4500000
+## 70     TRUE   FALSE      30     beer   male     FALSE                 4250000
+## 71    FALSE   FALSE      60      car   both      TRUE                 4500000
+## 72    FALSE    TRUE      30     beer   both     FALSE                 2200000
+## 73    FALSE   FALSE      30     beer   both     FALSE                 2200000
+## 74    FALSE   FALSE      30     beer   both     FALSE                 2100000
+## 75    FALSE   FALSE      60      pop   both      TRUE                 5200000
+## 76    FALSE    TRUE      60      pop   both      TRUE                 2200000
+## 77     TRUE   FALSE      30    snack   both     FALSE                 4000000
+## 78    FALSE   FALSE      60     beer female      TRUE                 4500000
+## 79     TRUE   FALSE      60     beer   male     FALSE                 2302200
+## 80     TRUE   FALSE      60     beer   male     FALSE                 4250000
+## 81    FALSE   FALSE      60      car   both     FALSE                 4500000
+## 82    FALSE   FALSE      60     beer   male     FALSE                 5000000
+## 83     TRUE   FALSE      30     beer   male     FALSE                 2100000
+## 84     TRUE   FALSE      60      pop   male     FALSE                 2999960
+## 85     TRUE   FALSE      30    snack   male     FALSE                 4250000
+## 86    FALSE   FALSE      30      car female     FALSE                 2302200
+## 87    FALSE   FALSE      60      NFL   both      TRUE                 4500000
+## 88    FALSE   FALSE      90      car   both      TRUE                 5000000
+## 89     TRUE    TRUE      60     beer   both      TRUE                 3500000
+## 90     TRUE   FALSE      60     beer   male     FALSE                 2699963
+## 91     TRUE   FALSE      45      car   both      TRUE                 3800000
+## 92    FALSE   FALSE      30    snack   both     FALSE                 2954010
+## 93     TRUE   FALSE      60     beer   both      TRUE                 4500000
+## 94    FALSE   FALSE      60      car female      TRUE                 5300000
+## 95    FALSE   FALSE      30     beer   both     FALSE                 2999960
+## 96     TRUE   FALSE      60     beer   male     FALSE                 5300000
+## 97    FALSE    TRUE      30     beer   both     FALSE                 2200000
+## 98     TRUE   FALSE      60      pop   both      TRUE                 5300000
+## 99    FALSE   FALSE      30      car   male     FALSE                 3500000
+## 100   FALSE   FALSE      30      car   male     FALSE                 3100000
+## 101    TRUE    TRUE      60      car   both     FALSE                 4250000
+## 102    TRUE   FALSE      60     beer   both     FALSE                 4000000
+## 103   FALSE   FALSE      30     beer   both     FALSE                 2385365
+## 104   FALSE   FALSE      30      car   male     FALSE                 2699963
+## 105   FALSE   FALSE      60      NFL   male      TRUE                 2954010
+## 106   FALSE   FALSE      45      pop   both      TRUE                 2400000
+## 107   FALSE   FALSE      60     beer   both     FALSE                 5200000
+## 108    TRUE   FALSE      60     beer   both     FALSE                 5200000
+## 109    TRUE    TRUE      30     beer   both     FALSE                 2302200
+## 110   FALSE   FALSE      30     beer   both     FALSE                 2200000
+## 111   FALSE   FALSE      30     beer   both      TRUE                 2500000
+## 112    TRUE    TRUE      60     beer   both      TRUE                 4000000
+## 113    TRUE   FALSE      60      pop   both      TRUE                 2999960
+## 114   FALSE    TRUE      30     beer   both      TRUE                 4000000
+## 115   FALSE    TRUE      30     beer   both      TRUE                 2200000
+## 116    TRUE   FALSE      30      car   male      TRUE                 4000000
+## 117   FALSE    TRUE      30     beer   male     FALSE                 2999960
+## 118   FALSE   FALSE      90      car   both      TRUE                 4000000
+## 119   FALSE    TRUE      60      car   both      TRUE                 4000000
+## 120    TRUE    TRUE      30     beer   both     FALSE                 3800000
+## 121   FALSE   FALSE      30     beer   male      TRUE                 2699963
+## 122   FALSE   FALSE      30     beer   male     FALSE                 2200000
+## 123   FALSE   FALSE      60     beer   both     FALSE                 3800000
+## 124    TRUE   FALSE      30    snack female     FALSE                 3100000
+## 125   FALSE   FALSE      15     beer   male     FALSE                 2400000
+## 126    TRUE   FALSE      45     beer   both      TRUE                 2400000
+## 127    TRUE   FALSE      30    snack   both     FALSE                 4000000
+## 128   FALSE   FALSE      45     beer   both     FALSE                 2699963
+## 129   FALSE   FALSE      30      pop   both     FALSE                 3500000
+## 130    TRUE   FALSE      30    snack   male      TRUE                 3500000
+## 131    TRUE    TRUE     100      car female      TRUE                 3500000
+## 132   FALSE   FALSE      30    snack   both      TRUE                 4500000
+## 133    TRUE    TRUE      30     beer   both     FALSE                 2200000
+## 134   FALSE   FALSE      45     beer   male     FALSE                 2200000
+## 135    TRUE   FALSE      30  finance   both     FALSE                 3800000
+## 136    TRUE   FALSE      30     beer   male     FALSE                 2699963
+## 137    TRUE   FALSE      30      pop female     FALSE                 3500000
+## 138   FALSE   FALSE      30      pop   male      TRUE                 2302200
+## 139    TRUE   FALSE      30    snack   both     FALSE                 2954010
+## 140   FALSE    TRUE      75      car female      TRUE                 3500000
+## 141   FALSE   FALSE     120      NFL   both      TRUE                 3500000
+## 142   FALSE    TRUE      30     beer female     FALSE                 2400000
+## 143   FALSE   FALSE     100      car   both     FALSE                 2954010
+## 144   FALSE   FALSE      30     beer female     FALSE                 2302200
+## 145   FALSE    TRUE      15     beer   male     FALSE                 2699963
+## 146   FALSE   FALSE      60      car female     FALSE                 4500000
+## 147   FALSE   FALSE      15     beer   both      TRUE                 2500000
+## 148    TRUE   FALSE      30      pop   both      TRUE                 2385365
+## 149    TRUE   FALSE      45     beer female     FALSE                 2385365
+## 150   FALSE   FALSE      15    snack   male     FALSE                 3800000
+## 151   FALSE   FALSE      60     beer   both      TRUE                 2954010
+## 152    TRUE    TRUE      30    snack   both      TRUE                 2999960
+## 153   FALSE   FALSE      30      pop   both     FALSE                 2999960
+## 154   FALSE   FALSE      30      pop   both     FALSE                 2999960
+## 155    TRUE   FALSE      30  finance   both     FALSE                 2200000
+## 156    TRUE   FALSE      60     beer   both      TRUE                 5200000
+## 157   FALSE    TRUE      45    snack female     FALSE                 4250000
+## 158    TRUE    TRUE      75      car   male      TRUE                 2954010
+## 159   FALSE   FALSE      30    snack   both     FALSE                 2699963
+## 160    TRUE   FALSE      30      pop   both     FALSE                 3500000
+## 161    TRUE   FALSE     120      car   both     FALSE                 3100000
+## 162   FALSE   FALSE      30      pop   both      TRUE                 2699963
+## 163    TRUE    TRUE      60     beer   male     FALSE                 2100000
+## 164    TRUE   FALSE      75      car   male     FALSE                 5300000
+## 165   FALSE    TRUE      60     beer   both     FALSE                 2200000
+## 166    TRUE    TRUE      75      car   both      TRUE                 3800000
+## 167   FALSE    TRUE      30      pop   both     FALSE                 2699963
+## 168   FALSE   FALSE      60     beer   both     FALSE                 5300000
+## 169   FALSE   FALSE      60      car female     FALSE                 3100000
+## 170   FALSE    TRUE      60     beer   both      TRUE                 2699963
+## 171   FALSE    TRUE      60     beer   male      TRUE                 2699963
+## 172   FALSE    TRUE      30  finance   both     FALSE                 2954010
+## 173   FALSE    TRUE      60     beer   both      TRUE                 3800000
+## 174   FALSE    TRUE      30      pop   both      TRUE                 2200000
+## 175   FALSE    TRUE      60      pop female     FALSE                 5200000
+## 176   FALSE   FALSE      60     beer   male      TRUE                 2200000
+## 177   FALSE    TRUE      60      pop   both     FALSE                 3100000
+## 178   FALSE    TRUE      30  finance   both     FALSE                 5200000
+## 179    TRUE   FALSE      30     beer   male      TRUE                 4500000
+## 180    TRUE   FALSE      60      pop   both     FALSE                 2699963
+## 181   FALSE    TRUE      75      car   both      TRUE                 3800000
+## 182    TRUE   FALSE      60      pop   both     FALSE                 4000000
+## 183    TRUE   FALSE      60     beer   both     FALSE                 3500000
+## 184    TRUE   FALSE      30     beer   male     FALSE                 2302200
+## 185   FALSE   FALSE      30     beer   male      TRUE                 2385365
+## 186   FALSE   FALSE      30     beer   both      TRUE                 2385365
+## 187   FALSE   FALSE      75      car   both     FALSE                 5300000
+## 188   FALSE    TRUE      45     beer   both     FALSE                 2200000
+## 189   FALSE   FALSE      30  finance   both     FALSE                 2954010
+## 190   FALSE   FALSE      60     beer   both      TRUE                 2200000
+## 191   FALSE   FALSE      60      car   male     FALSE                 5200000
+## 192    TRUE   FALSE      60     beer   male      TRUE                 2200000
+## 193    TRUE   FALSE      30     beer   male     FALSE                 3800000
+## 194    TRUE   FALSE      60     beer   both     FALSE                 2954010
+## 195    TRUE   FALSE      60     beer   both     FALSE                 2200000
+## 196    TRUE    TRUE      30  finance   both      TRUE                 2200000
+## 197   FALSE   FALSE      15     beer   male     FALSE                 2500000
+## 198    TRUE   FALSE      45      pop   both      TRUE                 3500000
+## 199   FALSE   FALSE      60     beer   both     FALSE                 5300000
+## 200   FALSE   FALSE      60      car female     FALSE                 2385365
+## 201   FALSE    TRUE      75      car   both      TRUE                 4000000
+## 202   FALSE   FALSE      30      pop   both     FALSE                 2500000
+## 203   FALSE    TRUE      60      pop   male     FALSE                 2500000
+## 204    TRUE   FALSE      45      pop   male     FALSE                 4250000
+## 205   FALSE   FALSE      45     beer   both      TRUE                 3500000
+## 206   FALSE   FALSE      30    snack female     FALSE                 2999960
+## 207    TRUE    TRUE      60     beer   both      TRUE                 2500000
+## 208   FALSE   FALSE      30     beer   both      TRUE                 4000000
+## 209   FALSE    TRUE      30      pop   both      TRUE                 2400000
+## 210    TRUE    TRUE      45     beer   male     FALSE                 2400000
+## 211    TRUE   FALSE      45     beer    N/A     FALSE                 2385365
+## 212   FALSE    TRUE      30      pop   both     FALSE                 2400000
+## 213    TRUE   FALSE      30     beer   both     FALSE                 4250000
+## 214    TRUE   FALSE      45     beer female     FALSE                 5300000
+## 215   FALSE    TRUE      30     beer   male      TRUE                 2302200
+## 216   FALSE    TRUE      30     beer   both      TRUE                 2200000
+## 217   FALSE   FALSE      45  finance   both     FALSE                 2999960
+## 218   FALSE    TRUE      30      pop   both     FALSE                 3800000
+## 219    TRUE    TRUE      30     beer female     FALSE                 2302200
+## 220   FALSE   FALSE      75      car   both      TRUE                 2999960
+## 221    TRUE   FALSE      45     beer   both     FALSE                 4000000
+## 222   FALSE   FALSE      30      pop   both      TRUE                 2200000
+## 223   FALSE   FALSE      30      pop   both     FALSE                 4250000
+## 224   FALSE   FALSE     120      NFL   male      TRUE                 2200000
+## 225   FALSE   FALSE      30    snack   both     FALSE                 3500000
+## 226   FALSE    TRUE      45      pop female     FALSE                 2200000
+## 227   FALSE    TRUE      30     beer   male     FALSE                 2200000
+## 228   FALSE   FALSE      30     beer   both     FALSE                 2100000
+## 229   FALSE    TRUE      45     beer   male     FALSE                 2200000
+## 230   FALSE   FALSE      75      car female      TRUE                 3800000
+## 231   FALSE   FALSE      90      car   both     FALSE                 4250000
+## 232    TRUE   FALSE      15     beer female     FALSE                 2100000
+## 233   FALSE    TRUE      30    snack   both      TRUE                 2200000
+## 234    TRUE   FALSE      30    snack   both      TRUE                 4500000
+## 235   FALSE   FALSE      45     beer   both     FALSE                 2699963
+## 236   FALSE    TRUE      30    snack female     FALSE                 2385365
+## 237   FALSE   FALSE     120      NFL   both      TRUE                 2200000
+## 238    TRUE    TRUE      30      pop   male     FALSE                 2200000
+## 239   FALSE   FALSE     120      NFL   both      TRUE                 4000000
+## 240    TRUE    TRUE      30     beer   male      TRUE                 3500000
+## 241   FALSE   FALSE      30      pop   male     FALSE                 2200000
+## 242   FALSE   FALSE      45  finance   both     FALSE                 2200000
+## 243   FALSE   FALSE      30     beer   both      TRUE                 2200000
+##     cost_per_minute cost_per_second cost_of_ad cost_of_ad_in_millions
+## 1          10400000       173333.33   10400000              10.400000
+## 2           5000000        83333.33    2500000               2.500000
+## 3          10400000       173333.33   10400000              10.400000
+## 4           4400000        73333.33    2200000               2.200000
+## 5          11200000       186666.67   11200000              11.200000
+## 6          11200000       186666.67   11200000              11.200000
+## 7          11200000       186666.67   11200000              11.200000
+## 8          11200000       186666.67   11200000              11.200000
+## 9          11200000       186666.67   11200000              11.200000
+## 10          5908020        98467.00    2954010               2.954010
+## 11          5908020        98467.00    2954010               2.954010
+## 12          4770730        79512.17    2385365               2.385365
+## 13          4400000        73333.33    4400000               4.400000
+## 14         11200000       186666.67   22400000              22.400000
+## 15         10000000       166666.67    5000000               5.000000
+## 16          4800000        80000.00    2400000               2.400000
+## 17          5999920        99998.67    2999960               2.999960
+## 18          4604400        76740.00    2302200               2.302200
+## 19         11200000       186666.67   11200000              11.200000
+## 20          4770730        79512.17    2385365               2.385365
+## 21         11200000       186666.67    5600000               5.600000
+## 22         10600000       176666.67   13250000              13.250000
+## 23          5999920        99998.67    5999920               5.999920
+## 24          6200000       103333.33    6200000               6.200000
+## 25         10600000       176666.67   10600000              10.600000
+## 26         10600000       176666.67    5300000               5.300000
+## 27          7600000       126666.67    3800000               3.800000
+## 28         10600000       176666.67   21200000              21.200000
+## 29          6200000       103333.33    6200000               6.200000
+## 30         10600000       176666.67    5300000               5.300000
+## 31          9000000       150000.00    4500000               4.500000
+## 32          5908020        98467.00    4431015               4.431015
+## 33          4200000        70000.00    2100000               2.100000
+## 34          4400000        73333.33    2200000               2.200000
+## 35         10400000       173333.33    5200000               5.200000
+## 36          4400000        73333.33    2200000               2.200000
+## 37         10400000       173333.33    5200000               5.200000
+## 38          7600000       126666.67   12666667              12.666667
+## 39          4604400        76740.00    3453300               3.453300
+## 40         10400000       173333.33   13000000              13.000000
+## 41         10400000       173333.33    5200000               5.200000
+## 42         10400000       173333.33    5200000               5.200000
+## 43          5908020        98467.00    1477005               1.477005
+## 44         10000000       166666.67   10000000              10.000000
+## 45          4200000        70000.00    2100000               2.100000
+## 46          4770730        79512.17    2385365               2.385365
+## 47          4200000        70000.00    2100000               2.100000
+## 48          7600000       126666.67    3800000               3.800000
+## 49          7600000       126666.67    3800000               3.800000
+## 50          4770730        79512.17    2385365               2.385365
+## 51          5999920        99998.67    2999960               2.999960
+## 52          7000000       116666.67    3500000               3.500000
+## 53         10600000       176666.67    2650000               2.650000
+## 54         10000000       166666.67   10000000              10.000000
+## 55          4770730        79512.17    2385365               2.385365
+## 56          6200000       103333.33    3100000               3.100000
+## 57          9000000       150000.00    4500000               4.500000
+## 58          5999920        99998.67    2999960               2.999960
+## 59          6200000       103333.33    6200000               6.200000
+## 60          9000000       150000.00    4500000               4.500000
+## 61          5999920        99998.67    2999960               2.999960
+## 62          5908020        98467.00    2954010               2.954010
+## 63          8500000       141666.67    4250000               4.250000
+## 64          4770730        79512.17    4770730               4.770730
+## 65         10600000       176666.67   10600000              10.600000
+## 66          4400000        73333.33    2200000               2.200000
+## 67          8000000       133333.33    8000000               8.000000
+## 68          4604400        76740.00    2302200               2.302200
+## 69          9000000       150000.00    9000000               9.000000
+## 70          8500000       141666.67    4250000               4.250000
+## 71          9000000       150000.00    9000000               9.000000
+## 72          4400000        73333.33    2200000               2.200000
+## 73          4400000        73333.33    2200000               2.200000
+## 74          4200000        70000.00    2100000               2.100000
+## 75         10400000       173333.33   10400000              10.400000
+## 76          4400000        73333.33    4400000               4.400000
+## 77          8000000       133333.33    4000000               4.000000
+## 78          9000000       150000.00    9000000               9.000000
+## 79          4604400        76740.00    4604400               4.604400
+## 80          8500000       141666.67    8500000               8.500000
+## 81          9000000       150000.00    9000000               9.000000
+## 82         10000000       166666.67   10000000              10.000000
+## 83          4200000        70000.00    2100000               2.100000
+## 84          5999920        99998.67    5999920               5.999920
+## 85          8500000       141666.67    4250000               4.250000
+## 86          4604400        76740.00    2302200               2.302200
+## 87          9000000       150000.00    9000000               9.000000
+## 88         10000000       166666.67   15000000              15.000000
+## 89          7000000       116666.67    7000000               7.000000
+## 90          5399926        89998.77    5399926               5.399926
+## 91          7600000       126666.67    5700000               5.700000
+## 92          5908020        98467.00    2954010               2.954010
+## 93          9000000       150000.00    9000000               9.000000
+## 94         10600000       176666.67   10600000              10.600000
+## 95          5999920        99998.67    2999960               2.999960
+## 96         10600000       176666.67   10600000              10.600000
+## 97          4400000        73333.33    2200000               2.200000
+## 98         10600000       176666.67   10600000              10.600000
+## 99          7000000       116666.67    3500000               3.500000
+## 100         6200000       103333.33    3100000               3.100000
+## 101         8500000       141666.67    8500000               8.500000
+## 102         8000000       133333.33    8000000               8.000000
+## 103         4770730        79512.17    2385365               2.385365
+## 104         5399926        89998.77    2699963               2.699963
+## 105         5908020        98467.00    5908020               5.908020
+## 106         4800000        80000.00    3600000               3.600000
+## 107        10400000       173333.33   10400000              10.400000
+## 108        10400000       173333.33   10400000              10.400000
+## 109         4604400        76740.00    2302200               2.302200
+## 110         4400000        73333.33    2200000               2.200000
+## 111         5000000        83333.33    2500000               2.500000
+## 112         8000000       133333.33    8000000               8.000000
+## 113         5999920        99998.67    5999920               5.999920
+## 114         8000000       133333.33    4000000               4.000000
+## 115         4400000        73333.33    2200000               2.200000
+## 116         8000000       133333.33    4000000               4.000000
+## 117         5999920        99998.67    2999960               2.999960
+## 118         8000000       133333.33   12000000              12.000000
+## 119         8000000       133333.33    8000000               8.000000
+## 120         7600000       126666.67    3800000               3.800000
+## 121         5399926        89998.77    2699963               2.699963
+## 122         4400000        73333.33    2200000               2.200000
+## 123         7600000       126666.67    7600000               7.600000
+## 124         6200000       103333.33    3100000               3.100000
+## 125         4800000        80000.00    1200000               1.200000
+## 126         4800000        80000.00    3600000               3.600000
+## 127         8000000       133333.33    4000000               4.000000
+## 128         5399926        89998.77    4049944               4.049944
+## 129         7000000       116666.67    3500000               3.500000
+## 130         7000000       116666.67    3500000               3.500000
+## 131         7000000       116666.67   11666667              11.666667
+## 132         9000000       150000.00    4500000               4.500000
+## 133         4400000        73333.33    2200000               2.200000
+## 134         4400000        73333.33    3300000               3.300000
+## 135         7600000       126666.67    3800000               3.800000
+## 136         5399926        89998.77    2699963               2.699963
+## 137         7000000       116666.67    3500000               3.500000
+## 138         4604400        76740.00    2302200               2.302200
+## 139         5908020        98467.00    2954010               2.954010
+## 140         7000000       116666.67    8750000               8.750000
+## 141         7000000       116666.67   14000000              14.000000
+## 142         4800000        80000.00    2400000               2.400000
+## 143         5908020        98467.00    9846700               9.846700
+## 144         4604400        76740.00    2302200               2.302200
+## 145         5399926        89998.77    1349982               1.349981
+## 146         9000000       150000.00    9000000               9.000000
+## 147         5000000        83333.33    1250000               1.250000
+## 148         4770730        79512.17    2385365               2.385365
+## 149         4770730        79512.17    3578048               3.578047
+## 150         7600000       126666.67    1900000               1.900000
+## 151         5908020        98467.00    5908020               5.908020
+## 152         5999920        99998.67    2999960               2.999960
+## 153         5999920        99998.67    2999960               2.999960
+## 154         5999920        99998.67    2999960               2.999960
+## 155         4400000        73333.33    2200000               2.200000
+## 156        10400000       173333.33   10400000              10.400000
+## 157         8500000       141666.67    6375000               6.375000
+## 158         5908020        98467.00    7385025               7.385025
+## 159         5399926        89998.77    2699963               2.699963
+## 160         7000000       116666.67    3500000               3.500000
+## 161         6200000       103333.33   12400000              12.400000
+## 162         5399926        89998.77    2699963               2.699963
+## 163         4200000        70000.00    4200000               4.200000
+## 164        10600000       176666.67   13250000              13.250000
+## 165         4400000        73333.33    4400000               4.400000
+## 166         7600000       126666.67    9500000               9.500000
+## 167         5399926        89998.77    2699963               2.699963
+## 168        10600000       176666.67   10600000              10.600000
+## 169         6200000       103333.33    6200000               6.200000
+## 170         5399926        89998.77    5399926               5.399926
+## 171         5399926        89998.77    5399926               5.399926
+## 172         5908020        98467.00    2954010               2.954010
+## 173         7600000       126666.67    7600000               7.600000
+## 174         4400000        73333.33    2200000               2.200000
+## 175        10400000       173333.33   10400000              10.400000
+## 176         4400000        73333.33    4400000               4.400000
+## 177         6200000       103333.33    6200000               6.200000
+## 178        10400000       173333.33    5200000               5.200000
+## 179         9000000       150000.00    4500000               4.500000
+## 180         5399926        89998.77    5399926               5.399926
+## 181         7600000       126666.67    9500000               9.500000
+## 182         8000000       133333.33    8000000               8.000000
+## 183         7000000       116666.67    7000000               7.000000
+## 184         4604400        76740.00    2302200               2.302200
+## 185         4770730        79512.17    2385365               2.385365
+## 186         4770730        79512.17    2385365               2.385365
+## 187        10600000       176666.67   13250000              13.250000
+## 188         4400000        73333.33    3300000               3.300000
+## 189         5908020        98467.00    2954010               2.954010
+## 190         4400000        73333.33    4400000               4.400000
+## 191        10400000       173333.33   10400000              10.400000
+## 192         4400000        73333.33    4400000               4.400000
+## 193         7600000       126666.67    3800000               3.800000
+## 194         5908020        98467.00    5908020               5.908020
+## 195         4400000        73333.33    4400000               4.400000
+## 196         4400000        73333.33    2200000               2.200000
+## 197         5000000        83333.33    1250000               1.250000
+## 198         7000000       116666.67    5250000               5.250000
+## 199        10600000       176666.67   10600000              10.600000
+## 200         4770730        79512.17    4770730               4.770730
+## 201         8000000       133333.33   10000000              10.000000
+## 202         5000000        83333.33    2500000               2.500000
+## 203         5000000        83333.33    5000000               5.000000
+## 204         8500000       141666.67    6375000               6.375000
+## 205         7000000       116666.67    5250000               5.250000
+## 206         5999920        99998.67    2999960               2.999960
+## 207         5000000        83333.33    5000000               5.000000
+## 208         8000000       133333.33    4000000               4.000000
+## 209         4800000        80000.00    2400000               2.400000
+## 210         4800000        80000.00    3600000               3.600000
+## 211         4770730        79512.17    3578048               3.578047
+## 212         4800000        80000.00    2400000               2.400000
+## 213         8500000       141666.67    4250000               4.250000
+## 214        10600000       176666.67    7950000               7.950000
+## 215         4604400        76740.00    2302200               2.302200
+## 216         4400000        73333.33    2200000               2.200000
+## 217         5999920        99998.67    4499940               4.499940
+## 218         7600000       126666.67    3800000               3.800000
+## 219         4604400        76740.00    2302200               2.302200
+## 220         5999920        99998.67    7499900               7.499900
+## 221         8000000       133333.33    6000000               6.000000
+## 222         4400000        73333.33    2200000               2.200000
+## 223         8500000       141666.67    4250000               4.250000
+## 224         4400000        73333.33    8800000               8.800000
+## 225         7000000       116666.67    3500000               3.500000
+## 226         4400000        73333.33    3300000               3.300000
+## 227         4400000        73333.33    2200000               2.200000
+## 228         4200000        70000.00    2100000               2.100000
+## 229         4400000        73333.33    3300000               3.300000
+## 230         7600000       126666.67    9500000               9.500000
+## 231         8500000       141666.67   12750000              12.750000
+## 232         4200000        70000.00    1050000               1.050000
+## 233         4400000        73333.33    2200000               2.200000
+## 234         9000000       150000.00    4500000               4.500000
+## 235         5399926        89998.77    4049944               4.049944
+## 236         4770730        79512.17    2385365               2.385365
+## 237         4400000        73333.33    8800000               8.800000
+## 238         4400000        73333.33    2200000               2.200000
+## 239         8000000       133333.33   16000000              16.000000
+## 240         7000000       116666.67    3500000               3.500000
+## 241         4400000        73333.33    2200000               2.200000
+## 242         4400000        73333.33    3300000               3.300000
+## 243         4400000        73333.33    2200000               2.200000
+##     cost_per_second_in_thousands
+## 1                      1.7333333
+## 2                      0.8333333
+## 3                      1.7333333
+## 4                      0.7333333
+## 5                      1.8666667
+## 6                      1.8666667
+## 7                      1.8666667
+## 8                      1.8666667
+## 9                      1.8666667
+## 10                     0.9846700
+## 11                     0.9846700
+## 12                     0.7951217
+## 13                     0.7333333
+## 14                     1.8666667
+## 15                     1.6666667
+## 16                     0.8000000
+## 17                     0.9999867
+## 18                     0.7674000
+## 19                     1.8666667
+## 20                     0.7951217
+## 21                     1.8666667
+## 22                     1.7666667
+## 23                     0.9999867
+## 24                     1.0333333
+## 25                     1.7666667
+## 26                     1.7666667
+## 27                     1.2666667
+## 28                     1.7666667
+## 29                     1.0333333
+## 30                     1.7666667
+## 31                     1.5000000
+## 32                     0.9846700
+## 33                     0.7000000
+## 34                     0.7333333
+## 35                     1.7333333
+## 36                     0.7333333
+## 37                     1.7333333
+## 38                     1.2666667
+## 39                     0.7674000
+## 40                     1.7333333
+## 41                     1.7333333
+## 42                     1.7333333
+## 43                     0.9846700
+## 44                     1.6666667
+## 45                     0.7000000
+## 46                     0.7951217
+## 47                     0.7000000
+## 48                     1.2666667
+## 49                     1.2666667
+## 50                     0.7951217
+## 51                     0.9999867
+## 52                     1.1666667
+## 53                     1.7666667
+## 54                     1.6666667
+## 55                     0.7951217
+## 56                     1.0333333
+## 57                     1.5000000
+## 58                     0.9999867
+## 59                     1.0333333
+## 60                     1.5000000
+## 61                     0.9999867
+## 62                     0.9846700
+## 63                     1.4166667
+## 64                     0.7951217
+## 65                     1.7666667
+## 66                     0.7333333
+## 67                     1.3333333
+## 68                     0.7674000
+## 69                     1.5000000
+## 70                     1.4166667
+## 71                     1.5000000
+## 72                     0.7333333
+## 73                     0.7333333
+## 74                     0.7000000
+## 75                     1.7333333
+## 76                     0.7333333
+## 77                     1.3333333
+## 78                     1.5000000
+## 79                     0.7674000
+## 80                     1.4166667
+## 81                     1.5000000
+## 82                     1.6666667
+## 83                     0.7000000
+## 84                     0.9999867
+## 85                     1.4166667
+## 86                     0.7674000
+## 87                     1.5000000
+## 88                     1.6666667
+## 89                     1.1666667
+## 90                     0.8999877
+## 91                     1.2666667
+## 92                     0.9846700
+## 93                     1.5000000
+## 94                     1.7666667
+## 95                     0.9999867
+## 96                     1.7666667
+## 97                     0.7333333
+## 98                     1.7666667
+## 99                     1.1666667
+## 100                    1.0333333
+## 101                    1.4166667
+## 102                    1.3333333
+## 103                    0.7951217
+## 104                    0.8999877
+## 105                    0.9846700
+## 106                    0.8000000
+## 107                    1.7333333
+## 108                    1.7333333
+## 109                    0.7674000
+## 110                    0.7333333
+## 111                    0.8333333
+## 112                    1.3333333
+## 113                    0.9999867
+## 114                    1.3333333
+## 115                    0.7333333
+## 116                    1.3333333
+## 117                    0.9999867
+## 118                    1.3333333
+## 119                    1.3333333
+## 120                    1.2666667
+## 121                    0.8999877
+## 122                    0.7333333
+## 123                    1.2666667
+## 124                    1.0333333
+## 125                    0.8000000
+## 126                    0.8000000
+## 127                    1.3333333
+## 128                    0.8999877
+## 129                    1.1666667
+## 130                    1.1666667
+## 131                    1.1666667
+## 132                    1.5000000
+## 133                    0.7333333
+## 134                    0.7333333
+## 135                    1.2666667
+## 136                    0.8999877
+## 137                    1.1666667
+## 138                    0.7674000
+## 139                    0.9846700
+## 140                    1.1666667
+## 141                    1.1666667
+## 142                    0.8000000
+## 143                    0.9846700
+## 144                    0.7674000
+## 145                    0.8999877
+## 146                    1.5000000
+## 147                    0.8333333
+## 148                    0.7951217
+## 149                    0.7951217
+## 150                    1.2666667
+## 151                    0.9846700
+## 152                    0.9999867
+## 153                    0.9999867
+## 154                    0.9999867
+## 155                    0.7333333
+## 156                    1.7333333
+## 157                    1.4166667
+## 158                    0.9846700
+## 159                    0.8999877
+## 160                    1.1666667
+## 161                    1.0333333
+## 162                    0.8999877
+## 163                    0.7000000
+## 164                    1.7666667
+## 165                    0.7333333
+## 166                    1.2666667
+## 167                    0.8999877
+## 168                    1.7666667
+## 169                    1.0333333
+## 170                    0.8999877
+## 171                    0.8999877
+## 172                    0.9846700
+## 173                    1.2666667
+## 174                    0.7333333
+## 175                    1.7333333
+## 176                    0.7333333
+## 177                    1.0333333
+## 178                    1.7333333
+## 179                    1.5000000
+## 180                    0.8999877
+## 181                    1.2666667
+## 182                    1.3333333
+## 183                    1.1666667
+## 184                    0.7674000
+## 185                    0.7951217
+## 186                    0.7951217
+## 187                    1.7666667
+## 188                    0.7333333
+## 189                    0.9846700
+## 190                    0.7333333
+## 191                    1.7333333
+## 192                    0.7333333
+## 193                    1.2666667
+## 194                    0.9846700
+## 195                    0.7333333
+## 196                    0.7333333
+## 197                    0.8333333
+## 198                    1.1666667
+## 199                    1.7666667
+## 200                    0.7951217
+## 201                    1.3333333
+## 202                    0.8333333
+## 203                    0.8333333
+## 204                    1.4166667
+## 205                    1.1666667
+## 206                    0.9999867
+## 207                    0.8333333
+## 208                    1.3333333
+## 209                    0.8000000
+## 210                    0.8000000
+## 211                    0.7951217
+## 212                    0.8000000
+## 213                    1.4166667
+## 214                    1.7666667
+## 215                    0.7674000
+## 216                    0.7333333
+## 217                    0.9999867
+## 218                    1.2666667
+## 219                    0.7674000
+## 220                    0.9999867
+## 221                    1.3333333
+## 222                    0.7333333
+## 223                    1.4166667
+## 224                    0.7333333
+## 225                    1.1666667
+## 226                    0.7333333
+## 227                    0.7333333
+## 228                    0.7000000
+## 229                    0.7333333
+## 230                    1.2666667
+## 231                    1.4166667
+## 232                    0.7000000
+## 233                    0.7333333
+## 234                    1.5000000
+## 235                    0.8999877
+## 236                    0.7951217
+## 237                    0.7333333
+## 238                    0.7333333
+## 239                    1.3333333
+## 240                    1.1666667
+## 241                    0.7333333
+## 242                    0.7333333
+## 243                    0.7333333</code></pre>
+<pre class="r"><code>#total1&lt;- bind_cols(data_ad, data_ad_time %&gt;% select(-year, -brand))</code></pre>
+<p><img src="costanalysis_files/figure-html/exploratory bar charts-1.png" width="672" /> <img src="costanalysis_files/figure-html/line graph-1.png" width="672" /><img src="costanalysis_files/figure-html/line graph-2.png" width="672" /></p>
+<pre><code>## # A tibble: 243 x 19
+## # Groups:   year [21]
+##     year brand funny show_product_qu… patriotic celebrity danger animals use_sex
+##    &lt;dbl&gt; &lt;chr&gt; &lt;lgl&gt; &lt;lgl&gt;            &lt;lgl&gt;     &lt;lgl&gt;     &lt;lgl&gt;  &lt;lgl&gt;   &lt;lgl&gt;  
+##  1  2018 Toyo… FALSE FALSE            FALSE     FALSE     FALSE  FALSE   FALSE  
+##  2  2006 Bud … TRUE  FALSE            FALSE     FALSE     TRUE   TRUE    FALSE  
+##  3  2018 Hynu… FALSE TRUE             FALSE     FALSE     FALSE  FALSE   FALSE  
+##  4  2003 Bud … TRUE  TRUE             FALSE     FALSE     TRUE   TRUE    TRUE   
+##  5  2020 Toyo… TRUE  TRUE             FALSE     TRUE      TRUE   TRUE    FALSE  
+##  6  2020 Coca… TRUE  FALSE            FALSE     TRUE      FALSE  TRUE    FALSE  
+##  7  2020 Kia   FALSE FALSE            FALSE     TRUE      FALSE  FALSE   FALSE  
+##  8  2020 Hynu… TRUE  TRUE             FALSE     TRUE      FALSE  TRUE    FALSE  
+##  9  2020 Budw… FALSE TRUE             TRUE      TRUE      TRUE   FALSE   FALSE  
+## 10  2010 Hynu… FALSE TRUE             TRUE      FALSE     FALSE  FALSE   FALSE  
+## # … with 233 more rows, and 10 more variables: ad_time &lt;dbl&gt;, category &lt;chr&gt;,
+## #   gender &lt;chr&gt;, diversity &lt;lgl&gt;, cost_per_thirty_seconds &lt;dbl&gt;,
+## #   cost_per_minute &lt;dbl&gt;, cost_per_second &lt;dbl&gt;, cost_of_ad &lt;dbl&gt;,
+## #   cost_of_ad_in_millions &lt;dbl&gt;, cost_per_second_in_thousands &lt;dbl&gt;</code></pre>
+<pre><code>## Warning in pal_name(palette, type): Unknown palette</code></pre>
+<p><img src="costanalysis_files/figure-html/line graph-3.png" width="672" /><img src="costanalysis_files/figure-html/line graph-4.png" width="672" /> <img src="costanalysis_files/figure-html/porportions-1.png" width="672" /></p>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
