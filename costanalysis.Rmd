@@ -19,6 +19,7 @@ data_ad_cost <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final
 total <- inner_join(data, data_ad_cost, by="year")
 total
 dim(total)
+knitr::kable(total)
 #chr to Numeric cost_per_minute and cost_per_thirty_seconds
 total11<-
 total%>% as.data.frame %>%
@@ -33,16 +34,16 @@ total%>% as.data.frame %>%
   mutate(cost_of_ad_in_millions =cost_of_ad/1000000 )%>%
   mutate(cost_per_second_in_thousands =cost_per_second/100000)
   
+total11
  # mutate(currency = scales::dollar(cost_per_second))
-
-
+  
  
   
 ```
 ```{r }
 #total1<- bind_cols(data_ad, data_ad_time %>% select(-year, -brand))
 ```
-## Check out this stuff
+
 
 ```{r exploratory bar charts, echo=FALSE, message=FALSE}
 # count of brands use of gender
