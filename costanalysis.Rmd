@@ -1,5 +1,5 @@
 ---
-title: "Check out this sick analysis"
+title: "How Much has Ad Price Gone Up, You Ask?!"
 output: distill::distill_article
 ---
 
