@@ -7,6 +7,13 @@ output: distill::distill_article
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(readr)
+library(tidyverse)
+library(highcharter)
+library(gapminder)
+library(htmlwidgets)
+library(kableExtra)
+library(fmsb)
+library(plotly)
 ```
 
 ```{r upload files, echo=FALSE, message=FALSE}
@@ -83,4 +90,37 @@ total11 %>%
  ggplot(data=total11, aes(x= year, fill=use_sex))+
    geom_bar(stat= "count", position="fill")+
    ggtitle("Porportion of SuperBowl Ads that use Sex Appeal from 2000 to 2020")
+```
+
+```{r boxplot, reorder }
+#reordering boxplots based on median cost_of_ad
+ggplot(data=total11, aes(x= fct_reorder(category, cost_of_ad_in_millions), y=cost_of_ad_in_millions))+
+geom_boxplot(fill="lightblue")+
+ggtitle("Boxplots of Cost Per Ad by Category")+
+xlab("Ad Category")+
+ylab("Ad Cost in Millions")
+```
+
+sunburst Plot of total Ad Cost
+ 
+```{r sunburst}
+total3 <- data_to_hierarchical(data=total11, c(category, brand),cost_of_ad_in_millions)
+
+
+hchart(total3, type = "sunburst")%>%
+hc_title(text="Total Ad Cost by Category and Brand in Millions from 2000-2020")
+
+hchart(total3, type = "treemap")
+```
+
+
+```{r bubble plot}
+p<- ggplot(data=total11, aes(x=year, y=cost_of_ad_in_millions, size= use_sex, fill= category))+
+  geom_point(alpha=0.5, shape=21, color="black")+
+  ylab("Cost of Ad in Millions")+
+  xlab("Year")+
+  ggtitle("Ad Cost by Year and Category")
+  
+ ggplotly(p, tooltip="text")
+
 ```

@@ -7,6 +7,13 @@ In our final project, we will investigate superbowl ads from 2000 to 2020 using 
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(readr)
+library(tidyverse)
+library(highcharter)
+library(gapminder)
+library(htmlwidgets)
+library(kableExtra)
+library(fmsb)
+library(plotly)
 ```
 
 

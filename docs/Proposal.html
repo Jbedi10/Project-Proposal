@@ -2022,7 +2022,6 @@
 <div class="nav-right">
 <a href="index.html">Home</a>
 <a href="costanalysis.html">Cost Analysis</a>
-<a href="Simulation.html">Simulation</a>
 <a href="adtheme.html">Ad Themes</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
@@ -2043,7 +2042,7 @@
 <div class="d-article">
 <h1 id="r-project-proposal">R Project Proposal</h1>
 <p>Valerie McIlvaine and Jake Bedi ## Introduction</p>
-<p>In our final project, we will investigate superbowl ads from 2000 to 2020 using a data set from Five Thirty Eight. We will make a website or application that displays trends of brands’ advertisement strategies over time and use predictive modeling/ simulations to anticipate which direction superbowl ads will go in the future. <code>{r setup, include=FALSE} knitr::opts_chunk$set(echo = TRUE) library(tidyverse) library(readr)</code></p>
+<p>In our final project, we will investigate superbowl ads from 2000 to 2020 using a data set from Five Thirty Eight. We will make a website or application that displays trends of brands’ advertisement strategies over time and use predictive modeling/ simulations to anticipate which direction superbowl ads will go in the future. <code>{r setup, include=FALSE} knitr::opts_chunk$set(echo = TRUE) library(tidyverse) library(readr) library(tidyverse) library(highcharter) library(gapminder) library(htmlwidgets) library(kableExtra) library(fmsb) library(plotly)</code></p>
 <p><code>{r upload files} data_ad_time &lt;- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/Ad  Time _ Category - Sheet1.csv") data &lt;- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/combined  - Sheet1.csv") data_ad_cost &lt;- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/Cost per Super bowl ad 2000-2020 - Sheet1 (1).csv")</code> ```{r joining two data sets } # merge data and data_ad_cost together total &lt;- inner_join(data, data_ad_cost, by=“year”) total dim(total) #chr to Numeric cost_per_minute and cost_per_thirty_seconds total11&lt;- total%&gt;% as.data.frame %&gt;% mutate(cost_per_minute=str_remove_all(cost_per_minute,“[$,]”), cost_per_minute=as.numeric(cost_per_minute)) %&gt;% mutate(cost_per_thirty_seconds=str_remove_all(cost_per_thirty_seconds,“[$,]”), cost_per_thirty_seconds=as.numeric(cost_per_thirty_seconds))%&gt;%</p>
 <p>mutate(cost_per_second = cost_per_minute/60 )%&gt;%</p>
 <p>mutate(cost_of_ad= cost_per_second*ad_time) %&gt;% mutate(cost_of_ad_in_millions =cost_of_ad/1000000 )%&gt;% mutate(cost_per_second_in_thousands =cost_per_second/100000)</p>

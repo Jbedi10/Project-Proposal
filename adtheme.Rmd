@@ -5,6 +5,13 @@ output: distill::distill_article
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(highcharter)
+library(gapminder)
+library(htmlwidgets)
+library(kableExtra)
+library(fmsb)
+library(plotly)
 ```
 
 ## R Markdown

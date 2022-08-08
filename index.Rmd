@@ -31,7 +31,8 @@ data_ad_time <- read_csv("Ad  Time _ Category - Sheet1.csv")
 data <- read_csv("combined  - Sheet1.csv")
 data_ad_cost <- read_csv("Cost per Super bowl ad 2000-2020 - Sheet1 (1).csv")
 ```
-```{r joining two data sets }
+
+```{r joining two data sets, echo=FALSE }
 # merge data and data_ad_cost together 
 total <- inner_join(data, data_ad_cost, by="year")
 total
