@@ -21,7 +21,7 @@ data_ad_time <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final
 data <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/combined  - Sheet1.csv")
 data_ad_cost <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/Cost per Super bowl ad 2000-2020 - Sheet1 (1).csv")
 ```
-```{r joining two data sets, echo=FALSE, message=FALSE }
+```{r joining two data sets, echo=FALSE, message=FALSE, results="hide"}
 # merge data and data_ad_cost together 
 total <- inner_join(data, data_ad_cost, by="year")
 total
@@ -58,7 +58,7 @@ ggplot(data=total, aes(x=category)) +
   geom_bar(stat= "count", position="dodge",color= "black", aes(fill=celebrity))+ 
    ggtitle("Bar char of Super Bowl Ad Categories and Celebrity Apperances From 2000-2020")
 ```
-```{r line graph, echo=FALSE, message=FALSE}
+```{r line graph, echo=FALSE, message=FALSE, results=FALSE}
   ggplot(data=total11, aes(cost_per_second)) +
   geom_histogram(binwidth = 10)
   
@@ -69,11 +69,10 @@ ggplot(data=total, aes(x=category)) +
   geom_point(color="blue")+
   ggtitle("Cost Per Second of Super Bowl Ads from 2000 to 2020")+
     ylab("Cost (Hundreds of Thousands of Dollars)")
-  
+
   
   
   #histogram of distribtuion of cost_of_ad by Year
-  
 total11 %>%
   group_by(year)
   ggplot(data=total11, aes(y=year, fill=year, color=year)) +
@@ -86,6 +85,7 @@ total11 %>%
   geom_bar( stat="count", position="dodge",colour="black", aes(fill=diversity)) 
   
 ```
+
 ```{r porportions, echo=FALSE, message=FALSE}
  ggplot(data=total11, aes(x= year, fill=use_sex))+
    geom_bar(stat= "count", position="fill")+

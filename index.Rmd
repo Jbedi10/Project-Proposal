@@ -1,7 +1,8 @@
 ---
-title: "Circle back"
+title: "STA 518 Final Projec"
 description: |
-  In our final project, we will investigate superbowl ads from 2000 to 2020 using a data set from Five Thirty Eight. We will make a website or application that displays trends of brands’ advertisement strategies over time and use predictive modeling/ simulations to anticipate which direction superbowl ads will go in the future.
+  In our final project, we will investigate superbowl ads from 2000 to 2020 using a data set from Five Thirty Eight. We will make a website or application that displays trends of brands’ advertisement strategies over time and use predictive modeling/ simulations to anticipate which direction superbowl ads will go in the future. Here is our link to the Main dataset (https://github.com/fivethirtyeight/superbowl-ads/blob/main/superbowl-ads.csv) and here is the link to the cost per second for ad (https://www.sportingnews.com/us/nfl/news/super-bowl-commercials-cost-2022/v9ytfqzx74pjrcdvxyhevlzd)
+
 
 site: distill::distill_website
 ---
@@ -32,7 +33,7 @@ data <- read_csv("combined  - Sheet1.csv")
 data_ad_cost <- read_csv("Cost per Super bowl ad 2000-2020 - Sheet1 (1).csv")
 ```
 
-```{r joining two data sets, echo=FALSE }
+```{r joining two data sets, echo=FALSE, results=FALSE }
 # merge data and data_ad_cost together 
 total <- inner_join(data, data_ad_cost, by="year")
 total
@@ -62,13 +63,13 @@ total11
 ```
 
 
-```{r exploratory bar charts}
+```{r exploratory bar charts, echo=FALSE}
 # count of brands use of gender
 ggplot(data=total, aes(x=category)) +
   geom_bar(stat= "count", position="dodge",color= "black", aes(fill=celebrity))+ 
    ggtitle("Bar char of Super Bowl Ad Categories and Celebrity Apperances From 2000-2020")
 ```
-```{r line graph}
+```{r line graph, echo=FALSE, results=FALSE}
   ggplot(data=total11, aes(cost_per_second)) +
   geom_histogram(binwidth = 10)
   
@@ -96,13 +97,13 @@ total11 %>%
   geom_bar( stat="count", position="dodge",colour="black", aes(fill=diversity)) 
   
 ```
-```{r porportions }
+```{r porportions, echo=FALSE}
  ggplot(data=total11, aes(x= year, fill=use_sex))+
    geom_bar(stat= "count", position="fill")+
    ggtitle("Porportion of SuperBowl Ads that use Sex Appeal from 2000 to 2020")
 ```
 
-```{r boxplot, reorder }
+```{r boxplot, reorder, echo=FALSE }
 #reordering boxplots based on median cost_of_ad
 ggplot(data=total11, aes(x= fct_reorder(category, cost_of_ad_in_millions), y=cost_of_ad_in_millions))+
 geom_boxplot(fill="lightblue")+
@@ -113,7 +114,7 @@ ylab("Ad Cost in Millions")
 
 sunburst Plot of total Ad Cost
  
-```{r sunburst}
+```{r sunburst, echo=FALSE}
 total3 <- data_to_hierarchical(data=total11, c(category, brand),cost_of_ad_in_millions)
 
 
