@@ -18,7 +18,7 @@ library(plotly)
 
 ```{r upload files, echo=FALSE, message=FALSE}
 data_ad_time <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/Ad  Time _ Category - Sheet1.csv")
-data <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/combined  - Sheet1.csv")
+data <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/combined  - Sheet1 (3).csv")
 data_ad_cost <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/Cost per Super bowl ad 2000-2020 - Sheet1 (1).csv")
 ```
 ```{r joining two data sets, echo=FALSE, message=FALSE, results="hide"}
@@ -50,8 +50,6 @@ total11
 ```{r }
 #total1<- bind_cols(data_ad, data_ad_time %>% select(-year, -brand))
 ```
-
-
 
 
 

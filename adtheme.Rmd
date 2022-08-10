@@ -61,3 +61,51 @@ ggplot(data=total, aes(x=category)) +
    geom_bar(stat= "count", position="fill")+
    ggtitle("Porportion of SuperBowl Ads that use Sex Appeal from 2000 to 2020")
 ```
+
+```{r ad_themes, echo=FALSE}
+#creating frequency table 
+ 
+total11 %>%
+  group_by(ad_time) %>%
+  summarize(Frequency=n()) %>%
+  arrange(desc(Frequency)) %>%
+  mutate(Proportion=Frequency/sum(Frequency)) %>%
+  mutate(AdTime= ad_time)%>%
+  select(AdTime, Frequency, Proportion)%>%
+  print(n=50)
+  
+  
+#Frequency table of Diverse Ads vs Year
+  total11 %>%
+  group_by(diversity, year) %>%
+  summarize(Frequency=n()) %>%
+  arrange(year) %>%
+  mutate(Proportion=Frequency/sum(Frequency))%>%
+    mutate(Year=year)%>%
+  select(Year,diversity, Frequency, Proportion,-year)%>%
+  print(n=50)
+
+
+#pie chart of animal use 
+
+ 
+ #percentage
+ total12<- total11 %>%
+  group_by(animals) %>%
+  summarise(counts=n(),
+            percentage= n()/nrow(total11))
+ #pie chart
+ ggplot(data=total12, aes(x="", y=percentage, fill=animals))+
+  geom_col(color="blue")+
+  coord_polar("y", start=0)+
+  geom_text(aes(label= paste0(round(percentage*100), "% ")),
+            position = position_stack(vjust = 0.5))+
+  theme(panel.background = element_blank(),
+        axis.line= element_blank(),
+         axis.text= element_blank(),
+         axis.ticks= element_blank(),
+        plot.title=element_text(hjust=0.5, size=18))+
+  ggtitle("Pie Chat of Percentage of Ads that use Animals")+
+   scale_fill_brewer("Use Animals")
+
+```
