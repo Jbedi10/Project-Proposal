@@ -88,12 +88,13 @@ hchart(total3, type = "treemap")
 
 
 ```{r bubble plot}
-p<- ggplot(data=total11, aes(x=year, y=cost_of_ad_in_millions, size= use_sex, fill= category))+
-  geom_point(alpha=0.5, shape=21, color="black")+
+p<- ggplot(data=total11, aes(x=year, y=cost_of_ad_in_millions, fill= category))+
+  geom_point(alpha=0.5, shape=21, size=3)+
   ylab("Cost of Ad in Millions")+
   xlab("Year")+
   ggtitle("Ad Cost by Year and Category")
   
  ggplotly(p, tooltip="text")
+
 
 ```
