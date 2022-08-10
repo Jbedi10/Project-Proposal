@@ -21,6 +21,7 @@ data_ad_time <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final
 data <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/combined  - Sheet1 (3).csv")
 data_ad_cost <- read_csv("~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/Cost per Super bowl ad 2000-2020 - Sheet1 (1).csv")
 ```
+
 ```{r joining two data sets, echo=FALSE, message=FALSE, results="hide"}
 # merge data and data_ad_cost together 
 total <- inner_join(data, data_ad_cost, by="year")
@@ -51,6 +52,17 @@ total11
 #total1<- bind_cols(data_ad, data_ad_time %>% select(-year, -brand))
 ```
 
+#create average ad cost by year
+```{r linegraph}
+total3<- total11%>% group_by(year)%>%
+summarise(avg_ad_cost= mean(cost_of_ad)) 
+
+hc <- total3 %>% 
+  hchart('line', hcaes(x = year, y =avg_ad_cost, group = year))%>%
+  hc_title(text="Average Cost of Super Bowl Ads Over 20 Years")
+  
+  hc
+```
 
 
 ```{r boxplot, reorder }
