@@ -2122,12 +2122,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#total1&lt;- bind_cols(data_ad, data_ad_time %&gt;% select(-year, -brand))</span>
-</code></pre>
-</div>
-</div>
-<div class="layout-chunk" data-layout="l-body">
 <p><img src="adtheme_files/figure-html5/exploratory%20bar%20charts-1.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
@@ -2145,6 +2139,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 6    120         7     0.0288
 7     90         3     0.0123
 8    100         3     0.0123</code></pre>
+</div>
+#Frequency table of Diverse Ads vs Year
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>total11</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>diversity</span>, <span class='va'>year</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarize</span><span class='op'>(</span>Frequency<span class='op'>=</span><span class='fu'>n</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='va'>year</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Proportion<span class='op'>=</span><span class='va'>Frequency</span><span class='op'>/</span><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>Frequency</span><span class='op'>)</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Year<span class='op'>=</span><span class='va'>year</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>Year</span>,<span class='va'>diversity</span>, <span class='va'>Frequency</span>, <span class='va'>Proportion</span>,<span class='op'>-</span><span class='va'>year</span><span class='op'>)</span><span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span>n<span class='op'>=</span><span class='fl'>50</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code># A tibble: 41 × 4
 # Groups:   diversity [2]
     Year diversity Frequency Proportion
@@ -2190,9 +2198,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 39  2019 TRUE              6     0.0625
 40  2020 FALSE             2     0.0136
 41  2020 TRUE              6     0.0625</code></pre>
-<p><img src="adtheme_files/figure-html5/ad_themes-1.png" width="624" /></p>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+#pie chart of animal use
+<div class="layout-chunk" data-layout="l-body">
+<pre class="rpercentage"><code> total12&lt;- total11 %&gt;%
+  group_by(animals) %&gt;%
+  summarise(counts=n(),
+            percentage= n()/nrow(total11))
+ #pie chart
+ ggplot(data=total12, aes(x=&quot;&quot;, y=percentage, fill=animals))+
+  geom_col(color=&quot;blue&quot;)+
+  coord_polar(&quot;y&quot;, start=0)+
+  geom_text(aes(label= paste0(round(percentage*100), &quot;% &quot;)),
+            position = position_stack(vjust = 0.5))+
+  theme(panel.background = element_blank(),
+        axis.line= element_blank(),
+         axis.text= element_blank(),
+         axis.ticks= element_blank(),
+        plot.title=element_text(hjust=0.5, size=18))+
+  ggtitle(&quot;Pie Chat of Percentage of Ads that use Animals&quot;)+
+   scale_fill_brewer(&quot;Use Animals&quot;)
+</code></pre>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
