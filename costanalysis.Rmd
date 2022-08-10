@@ -52,7 +52,7 @@ total11
 #total1<- bind_cols(data_ad, data_ad_time %>% select(-year, -brand))
 ```
 
-#create average ad cost by year
+
 ```{r linegraph}
 total3<- total11%>% group_by(year)%>%
 summarise(avg_ad_cost= mean(cost_of_ad)) 
