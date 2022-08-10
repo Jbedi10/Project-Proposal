@@ -27,7 +27,5 @@ library(fmsb)
 library(plotly)
 
 ```
-![Image](christopher-alvarenga-GCEAqghDxRo-unsplash.jpg)
+![](christopher-alvarenga-GCEAqghDxRo-unsplash.jpg)
 
-```{r, echo=FALSE, fig.align='center'}
-```

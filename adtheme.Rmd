@@ -103,3 +103,25 @@ total11 %>%
    scale_fill_brewer("Use Animals")
 
 ```
+
+```{r pie chart, message=FALSE, echo=FALSE}
+ #percentage
+ total12<- total11 %>%
+  group_by(funny) %>%
+  summarise(counts=n(),
+            percentage= n()/nrow(total11))
+ #pie chart humor
+ ggplot(data=total12, aes(x="", y=percentage, fill=funny))+
+  geom_col(color="blue")+
+  coord_polar("y", start=0)+
+  geom_text(aes(label= paste0(round(percentage*100), "% ")),
+            position = position_stack(vjust = 0.5))+
+  theme(panel.background = element_blank(),
+        axis.line= element_blank(),
+         axis.text= element_blank(),
+         axis.ticks= element_blank(),
+        plot.title=element_text(hjust=0.5, size=18))+
+  ggtitle("Pie Chat of Percentage of Ads that use humor")+
+   scale_fill_brewer("Use Humor") 
+
+```
