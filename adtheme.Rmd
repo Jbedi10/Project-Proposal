@@ -50,7 +50,7 @@ total11
 # count of brands use of gender
 ggplot(data=total, aes(x=category)) +
   geom_bar(stat= "count", position="dodge",color= "black", aes(fill=celebrity))+ 
-   ggtitle("Bar char of Super Bowl Ad Categories and Celebrity Apperances From 2000-2020")
+   ggtitle("Super Bowl Ad Categories and Celebrity Apperances From 2000-2020")
 ```
 
 ```{r porportions, echo=FALSE, message=FALSE}
