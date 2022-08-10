@@ -59,7 +59,7 @@ ggplot(data=total, aes(x=category)) +
    ggtitle("Porportion of SuperBowl Ads that use Sex Appeal from 2000 to 2020")
 ```
 
-```{r ad_themes, echo=FALSE, message=FALSE, results='hide'}
+```{r ad_themes, echo=FALSE, message=FALSE}
 #creating frequency table 
  
 total11 %>%
@@ -72,7 +72,7 @@ total11 %>%
   print(n=50)
 ```
   
-```{r diverse, echo=FALSE, message=FALSE, results='hide'}  
+```{r diverse, echo=FALSE, message=FALSE}  
 total11 %>%
   group_by(diversity, year) %>%
   summarize(Frequency=n()) %>%
