@@ -6,42 +6,42 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-08-08T23:29:09+00:00"
+      "last_modified": "2022-08-10T16:53:40+00:00"
     },
     {
       "path": "adtheme.html",
-      "title": "Ad Themes",
+      "title": "So Many Ads, So Many Themes",
       "author": [],
       "contents": "\nR Markdown\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.\nWhen you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:\n\n\nsummary(cars)\n\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00  \n\nIncluding Plots\nYou can also embed plots, for example:\n\n\n\nNote that the echo = FALSE parameter was added to the code chunk to prevent printing of the R code that generated the plot.\n\n\n\n",
-      "last_modified": "2022-08-08T23:29:11+00:00"
+      "last_modified": "2022-08-10T16:53:42+00:00"
     },
     {
       "path": "costanalysis.html",
-      "title": "Check out this sick analysis",
+      "title": "How Much has Ad Price Gone Up, You Ask?!",
       "author": [],
       "contents": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsunburst Plot of total Ad Cost\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2022-08-08T23:29:19+00:00"
+      "last_modified": "2022-08-10T16:53:50+00:00"
     },
     {
       "path": "index.html",
-      "title": "STA 518 Final Projec",
+      "title": "STA 518 Final Project",
       "description": "In our final project, we will investigate superbowl ads from 2000 to 2020 using a data set from Five Thirty Eight. We will make a website or application that displays trends of brands’ advertisement strategies over time and use predictive modeling/ simulations to anticipate which direction superbowl ads will go in the future. Here is our link to the Main dataset (https://github.com/fivethirtyeight/superbowl-ads/blob/main/superbowl-ads.csv) and here is the link to the cost per second for ad (https://www.sportingnews.com/us/nfl/news/super-bowl-commercials-cost-2022/v9ytfqzx74pjrcdvxyhevlzd)\n",
       "author": [],
       "contents": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsunburst Plot of total Ad Cost\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2022-08-08T23:29:27+00:00"
+      "last_modified": "2022-08-10T16:53:57+00:00"
     },
     {
       "path": "Proposal.html",
       "author": [],
       "contents": "\nR Project Proposal\nValerie McIlvaine and Jake Bedi ## Introduction\nIn our final project, we will investigate superbowl ads from 2000 to 2020 using a data set from Five Thirty Eight. We will make a website or application that displays trends of brands’ advertisement strategies over time and use predictive modeling/ simulations to anticipate which direction superbowl ads will go in the future. {r setup, include=FALSE} knitr::opts_chunk$set(echo = TRUE) library(tidyverse) library(readr) library(tidyverse) library(highcharter) library(gapminder) library(htmlwidgets) library(kableExtra) library(fmsb) library(plotly)\n{r upload files} data_ad_time <- read_csv(\"~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/Ad  Time _ Category - Sheet1.csv\") data <- read_csv(\"~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/combined  - Sheet1.csv\") data_ad_cost <- read_csv(\"~/STA 518/Final Project/Portfolio/Final Proposal/Final Project/Cost per Super bowl ad 2000-2020 - Sheet1 (1).csv\") ```{r joining two data sets } # merge data and data_ad_cost together total <- inner_join(data, data_ad_cost, by=“year”) total dim(total) #chr to Numeric cost_per_minute and cost_per_thirty_seconds total11<- total%>% as.data.frame %>% mutate(cost_per_minute=str_remove_all(cost_per_minute,“[$,]”), cost_per_minute=as.numeric(cost_per_minute)) %>% mutate(cost_per_thirty_seconds=str_remove_all(cost_per_thirty_seconds,“[$,]”), cost_per_thirty_seconds=as.numeric(cost_per_thirty_seconds))%>%\nmutate(cost_per_second = cost_per_minute/60 )%>%\nmutate(cost_of_ad= cost_per_second*ad_time) %>% mutate(cost_of_ad_in_millions =cost_of_ad/1000000 )%>% mutate(cost_per_second_in_thousands =cost_per_second/100000)\ntotal11 # mutate(currency = scales::dollar(cost_per_second))\n```{r }\n#total1<- bind_cols(data_ad, data_ad_time %>% select(-year, -brand))\n{r exploratory bar charts} # count of brands use of gender ggplot(data=total, aes(x=category)) +   geom_bar(stat= \"count\", position=\"dodge\",color= \"black\", aes(fill=celebrity))+     ggtitle(\"Bar char of Super Bowl Ad Categories and Celebrity Apperances From 2000-2020\") ```{r line graph} ggplot(data=total11, aes(cost_per_second)) + geom_histogram(binwidth = 10)\n#line graph ggplot(data=total11, aes(x=year, y=cost_per_second_in_thousands)) + geom_line(linetype = “dashed”, color=“blue”, size=1)+ theme(legend.position=“bottom”)+ geom_point(color=“blue”)+ ggtitle(“Cost Per Second of Super Bowl Ads from 2000 to 2020”)+ ylab(“Cost (Hundreds of Thousands of Dollars)”)\n#histogram of distribtuion of cost_of_ad by Year\ntotal11 %>% group_by(year) ggplot(data=total11, aes(y=year, fill=year, color=year)) + geom_histogram(alpha=0.5, position=“dodge”, bins=10)+ scale_color_brewer(palette=\"“) + theme_classic()+theme(legend.position=”top\")\nggplot(data=total, aes(x=year)) + geom_bar( stat=“count”, position=“dodge”,colour=“black”, aes(fill=diversity))\n```{r porportions }\n ggplot(data=total11, aes(x= year, fill=use_sex))+\n   geom_bar(stat= \"count\", position=\"fill\")+\n   ggtitle(\"Porportion of SuperBowl Ads that use Sex Appeal from 2000 to 2020\")\n```{r boxplot, reorder }\n#reordering boxplots based on median cost_of_ad\nggplot(data=total11, aes(x= fct_reorder(category, cost_of_ad_in_millions), y=cost_of_ad_in_millions))+\ngeom_boxplot(fill=\"lightblue\")+\nggtitle(\"Boxplots of Cost Per Ad by Category\")+\nxlab(\"Ad Category\")+\nylab(\"Ad Cost in Millions\")\n{r tables} total11 %>% group_by(year) %>%   summarize_at()\n\n\n",
-      "last_modified": "2022-08-08T23:29:27+00:00"
+      "last_modified": "2022-08-10T16:53:57+00:00"
     },
     {
       "path": "Simulation.html",
       "title": "Simulation",
       "author": [],
       "contents": "\nR Markdown\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.\nWhen you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:\n\n\nsummary(cars)\n\n\n     speed           dist       \n Min.   : 4.0   Min.   :  2.00  \n 1st Qu.:12.0   1st Qu.: 26.00  \n Median :15.0   Median : 36.00  \n Mean   :15.4   Mean   : 42.98  \n 3rd Qu.:19.0   3rd Qu.: 56.00  \n Max.   :25.0   Max.   :120.00  \n\nIncluding Plots\nYou can also embed plots, for example:\n\n\n\nNote that the echo = FALSE parameter was added to the code chunk to prevent printing of the R code that generated the plot.\n\n\n\n",
-      "last_modified": "2022-08-08T23:29:28+00:00"
+      "last_modified": "2022-08-10T16:53:58+00:00"
     }
   ],
   "collections": []
