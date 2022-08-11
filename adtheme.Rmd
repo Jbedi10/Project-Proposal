@@ -62,6 +62,21 @@ This graph shows celebrity appearances for each category from 2000-2020. As we c
 ```
 
 This graph depicts the use of 'Sex Appeal' in all brands studied in this sample. In the year 2000-2009 it looks like brands were using this to attract consumers as this number of ads was hovering around the 50% mark. From then on it has drastically decreased as brands have found other ways of promoting their products. It seems that sex appeal does not have much consumer pull as it once had in the early 2000's. 
+```{r diversity, message=FALSE, echo=FALSE}
+ # diversity plot
+total11 %>%
+  group_by(year)
+
+  ggplot(data=total11, aes(y=year, fill=year, color=year)) +
+  geom_histogram(alpha=0.5, position="dodge", bins=10)+
+       scale_color_brewer(palette="") + 
+  theme_classic()+theme(legend.position="top")
+ 
+  
+  ggplot(data=total, aes(x=year)) +
+  geom_bar( stat="count", position="dodge",colour="black", aes(fill=diversity)) 
+
+```
 
 ```{r ad_themes, echo=FALSE, message=FALSE}
 #creating frequency table 
