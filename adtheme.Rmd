@@ -67,14 +67,12 @@ This graph depicts the use of 'Sex Appeal' in all brands studied in this sample.
 total11 %>%
   group_by(year)
 
-  ggplot(data=total11, aes(y=year, fill=year, color=year)) +
-  geom_histogram(alpha=0.5, position="dodge", bins=10)+
-       scale_color_brewer(palette="") + 
-  theme_classic()+theme(legend.position="top")
+
  
   
   ggplot(data=total, aes(x=year)) +
-  geom_bar( stat="count", position="dodge",colour="black", aes(fill=diversity)) 
+  geom_bar( stat="count", position="dodge",colour="black", aes(fill=diversity))+
+    ggtitle('Number of Diverse Ads From 2000-2020')
 
 ```
 Unfortunately, from 2000 to 2020 there does not appear to have a steady upward trend of the number of ads that are considered to be diverse. It looks like the number of diverse ads was increasing until around 2015 and then the number stopped increasing for a few years before going back up in 2019 and 2020. 
