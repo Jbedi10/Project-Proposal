@@ -63,7 +63,7 @@ hc <- total3 %>%
   
   hc
 ```
-
+From 2000 to 2020, the cost of Super Bowl ads has been steadily increasing starting at around 2.2 million in 2000 to 11.9 million in 2020.  The average price only slightly decreased from 2001-2002, 2003-2004, 2014-2015, and from 2017-2018. From 2000 to 2020, the average Super Bowl ad cost had increased by more than 500%.
 
 ```{r boxplot, reorder }
 #reordering boxplots based on median cost_of_ad
@@ -73,8 +73,7 @@ ggtitle("Boxplots of Cost Per Ad by Category")+
 xlab("Ad Category")+
 ylab("Ad Cost in Millions")
 ```
-
-sunburst Plot of total Ad Cost
+From these boxplots, we can see that the NFL and Car ads look to have significantly larger median ad costs. The Finance, Beer, Snack, and Pop categories have more similar median ad costs.
  
 ```{r sunburst}
 total3 <- data_to_hierarchical(data=total11, c(category, brand),cost_of_ad_in_millions)
@@ -85,7 +84,7 @@ hc_title(text="Total Ad Cost by Category and Brand in Millions from 2000-2020")
 
 hchart(total3, type = "treemap")
 ```
-
+From the Sunburst plot and square plot, we can see the ad categories broken down into brands. When you hover the chart, it shows you how much money in millions that the brand/category has spent on Super Bowl ads in the past two decades. 
 
 ```{r bubble plot}
 p<- ggplot(data=total11, aes(x=year, y=cost_of_ad_in_millions, fill= category))+
@@ -98,3 +97,4 @@ p<- ggplot(data=total11, aes(x=year, y=cost_of_ad_in_millions, fill= category))+
 
 
 ```
+This bubble plot breaks down ad cost by category. We can see that the NFL ads cost significantly more in the early 2000’s, late 2010’s, and in 2020. This is because the NFL ads are longer than most of the other ads. Although, based on our research, the NFL likely doesn’t actually pay this much for their own ads. From this plot, we can also see that car ads are more expensive and became more frequent in the 2010’s. 
