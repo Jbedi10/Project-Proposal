@@ -100,15 +100,12 @@ p<- ggplot(data=total11, aes(x=year, y=cost_of_ad_in_millions, fill= category))+
 ```
 This bubble plot breaks down ad cost by category. We can see that the NFL ads cost significantly more in the early 2000’s, late 2010’s, and in 2020. This is because the NFL ads are longer than most of the other ads. Although, based on our research, the NFL likely doesn’t actually pay this much for their own ads. From this plot, we can also see that car ads are more expensive and became more frequent in the 2010’s. 
 
-```{r coorelation, }
+```{r coorelation, echo=FALSE, message=FALSE}
 #Correlation Matrix
 total3<- total11%>%
 select(ad_time, cost_of_ad, year, cost_per_second)
-total3
 p.mat<- cor_pmat(total3)
-p.mat
 corr<- round(cor(total3), 1)
-corr
 ggcorrplot(corr, hc.order =TRUE,
            type="lower", p.mat=p.mat,
            title= "Correlation of Super Bowl Ad Times, Cost, and Year",
