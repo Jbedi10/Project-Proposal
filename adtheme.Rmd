@@ -75,7 +75,7 @@ total11 %>%
   select(AdTime, Frequency, Proportion)%>%
   print(n=50)
 ```
-  
+From  this frequency table, we can see that 49% of Super Bowl ads from 2000 to 2020 were 30 seconds in length and one 1.23% were 100 seconds long. 
 
 ```{r percentage, echo=FALSE, message=FALSE}
  total12<- total11 %>%
