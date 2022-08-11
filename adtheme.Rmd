@@ -99,7 +99,7 @@ total11 %>%
 ```
 For years 2000-2020 it seems that animal use is not as frequent as one may think. Although everyone loves the Budweiser horses and puppy, not many other brands are using animals to promote their product. 
 
-```{r pie chart, message=FALSE, echo=FALSE}
+```{r pie chartf, message=FALSE, echo=FALSE}
  #percentage
  total12<- total11 %>%
   group_by(funny) %>%
