@@ -61,10 +61,8 @@ This graph shows celebrity appearances for each category from 2000-2020. As we c
 ```
 This graph depicts the use of 'Sex Appeal' in all brands studied in this sample. In the year 2000-2009 it looks like brands were using this to attract consumers as this number of ads was hovering around the 50% mark. From then on it has drastically decreased as brands have found other ways of promoting their products. It seems that sex appeal does not have much consumer pull as it once had in the early 2000's.
 
-```{r diversity, message=FALSE, echo=FALSE}
+```{r diversity, echo=FALSE, message=FALSE}
  # diversity plot
-total11 %>%
-  group_by(year)
 
 
  
