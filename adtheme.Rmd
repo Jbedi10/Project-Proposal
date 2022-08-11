@@ -77,7 +77,7 @@ total11 %>%
   geom_bar( stat="count", position="dodge",colour="black", aes(fill=diversity)) 
 
 ```
-
+Unfortunately, from 2000 to 2020 there does not appear to have a steady upward trend of the number of ads that are considered to be diverse. It looks like the number of diverse ads was increasing until around 2015 and then the number stopped increasing for a few years before going back up in 2019 and 2020. 
 ```{r ad_themes, echo=FALSE, message=FALSE}
 #creating frequency table 
  
